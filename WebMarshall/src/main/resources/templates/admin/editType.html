@@ -1,0 +1,129 @@
+<html xmlns:th="http://www.thymeLeaf.org">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Quan ly</title>
+<!-- Tell the browser to be responsive to screen width -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet"
+	href="../../plugins/fontawesome-free/css/all.min.css">
+<!-- Ionicons -->
+<link rel="stylesheet"
+	href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+<!-- Tempusdominus Bbootstrap 4 -->
+<link rel="stylesheet"
+	href="../../plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+<!-- iCheck -->
+<link rel="stylesheet"
+	href="../../plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+<!-- JQVMap -->
+<link rel="stylesheet" href="../../plugins/jqvmap/jqvmap.min.css">
+<!-- Theme style -->
+<link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+<!-- overlayScrollbars -->
+<link rel="stylesheet"
+	href="../../plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+<!-- Daterange picker -->
+<link rel="stylesheet"
+	href="../../plugins/daterangepicker/daterangepicker.css">
+<!-- summernote -->
+<link rel="stylesheet"
+	href="../../plugins/summernote/summernote-bs4.css">
+<!-- Google Font: Source Sans Pro -->
+<link
+	href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700"
+	rel="stylesheet">
+</head>
+<body>
+
+	<th:block th:include="admin/management"></th:block>
+
+	<div class="content-wrapper">
+		<!-- Content Header (Page header) -->
+		<section class="content-header">
+			<div class="container-fluid">
+				<div class="row mb-2">
+					<div class="col-sm-6">
+						<h1>Hạng mục</h1>
+					</div>
+					<div class="col-sm-6">
+						<ol class="breadcrumb float-sm-right">
+							<li class="breadcrumb-item"><a href="#">Home</a></li>
+							<li class="breadcrumb-item active">Hạng mục</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+			<!-- /.container-fluid -->
+		</section>
+
+		<!-- Main content -->
+		<section class="content">
+
+			<!-- Default box -->
+			<div class="card">
+				<div class="card-header">
+					<h3 class="card-title">
+						<a th:href="@{/admin/addType}">Thêm danh mục</a>
+					</h3>
+
+					<div class="card-tools">
+						<button type="button" class="btn btn-tool"
+							data-card-widget="collapse" data-toggle="tooltip"
+							title="Collapse">
+							<i class="fas fa-minus"></i>
+						</button>
+						<button type="button" class="btn btn-tool"
+							data-card-widget="remove" data-toggle="tooltip" title="Remove">
+							<i class="fas fa-times"></i>
+						</button>
+					</div>
+				</div>
+				<div class="card-body p-0">
+					<form action="#" th:action="@{/admin/editType}" method="post"
+						th:object="${type}">
+						<table class="table table-striped projects">
+							<tr>
+								<td>Mã hạng mục</td>
+								<td><input type="text" th:field="*{typeId}"
+									readonly="readonly" /></td>
+							</tr>
+							<tr>
+								<td>Tên hạng mục</td>
+								<td><input type="text" th:field="*{typeName}" /></td>
+							</tr>
+							<tr>
+								<td>Chọn hạng mục</td>
+								<td>
+									<select th:field="*{categories.catId}" >
+									
+										<option   th:each="c: ${listCat}" th:value="${c.catId}"
+										th:text="${c.catName}"></option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td>Mô tả</td>
+								<td><input type="text" th:field="*{descriptions}" /></td>
+							</tr>
+							<tr>
+								<td>&nbsp;</td>
+								<td>
+									<input type="submit" value="Cập nhật" />
+									<input type="reset" value="Reset" />
+								</td>
+							</tr>
+						</table>
+					</form>
+				</div>
+				<!-- /.card-body -->
+
+			</div>
+			<!-- /.card -->
+
+		</section>
+		<!-- /.content -->
+	</div>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org">
+<head>
+<link rel="stylesheet" type="text/css" href="/style.css" />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel='stylesheet' id='mbwph-style-css'
+	href='../../wp-content/plugins/wp-helper-lite/public/partials/assets/css/mbwph-style24b2.css?ver=5.5.5'
+	type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-css'
+	href='../../wp-includes/css/dist/block-library/style.min24b2.css?ver=5.5.5'
+	type='text/css' media='all' />
+<link rel='stylesheet' id='wc-block-vendors-style-css'
+	href='../../wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/vendors-stylee100.css?ver=4.7.2'
+	type='text/css' media='all' />
+<link rel='stylesheet' id='wc-block-style-css'
+	href='../../wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/stylee100.css?ver=4.7.2'
+	type='text/css' media='all' />
+<link rel='stylesheet' id='flatsome-icons-css'
+	href='../../wp-content/themes/flatsome/assets/css/fl-iconsae34.css?ver=3.12'
+	type='text/css' media='all' />
+<link rel='stylesheet' id='flatsome-main-css'
+	href='../../wp-content/themes/flatsome/assets/css/flatsome2916.css?ver=3.13.1'
+	type='text/css' media='all' />
+<link rel='stylesheet' id='flatsome-shop-css'
+	href='../../wp-content/themes/flatsome/assets/css/flatsome-shop2916.css?ver=3.13.1'
+	type='text/css' media='all' />
+<link rel='stylesheet' id='flatsome-style-css'
+	href='../../wp-content/themes/flatsome-child/style6aec.css?ver=3.0'
+	type='text/css' media='all' />
+<link rel='stylesheet' id='dashicons-css'
+	href='../../wp-includes/css/dashicons.min24b2.css?ver=5.5.5'
+	type='text/css' media='all' />
+<link rel='stylesheet' id='flatsome-googlefonts-css'
+	href='http://fonts.googleapis.com/css?family=Montserrat%3Aregular%2Cdefault%2Cdefault%2C400%7CDancing+Script%3Aregular%2C400&amp;display=swap&amp;ver=3.9'
+	type='text/css' media='all' />
+<link rel="https://api.w.org/" href="wp-json/index.html" />
+<link rel="alternate" type="application/json"
+	href="../../wp-json/wp/v2/pages/61.json" />
+<link rel="EditURI" type="application/rsd+xml" title="RSD"
+	href="xmlrpc0db0.html?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml"
+	href="../../wp-includes/wlwmanifest.xml" />
+<link rel='shortlink' href='index.html' />
+<link rel="alternate" type="application/json+oembed"
+	href="../../wp-json/oembed/1.0/embedc187.json?url=https%3A%2F%2Fmarshallsaigon.com%2F" />
+<link rel="alternate" type="text/xml+oembed"
+	href="../../wp-json/oembed/1.0/embed3b9e?url=https%3A%2F%2Fmarshallsaigon.com%2F&amp;format=xml" />
+<link rel="icon"
+	href="../../wp-content/uploads/2020/08/cropped-Logo-Marshall-1-2-32x32.png"
+	sizes="32x32" />
+<link rel="icon"
+	href="../../static/wp-content/uploads/2020/08/cropped-Logo-Marshall-1-2-192x192.png"
+	sizes="192x192" />
+<link rel="apple-touch-icon"
+	href="../../wp-content/uploads/2020/08/cropped-Logo-Marshall-1-2-180x180.png" />
+<meta charset="UTF-8">
+<title>Marshall</title>
+</head>
+<body>
+	<th:block th:include="header"></th:block>
+	<main id="main" class="">
+
+		<div class="row category-page-row">
+
+			<div class="col large-12">
+				<div class="shop-container">
+					<div class="woocommerce-notices-wrapper"></div>
+
+					<div
+						class="products row row-small large-columns-3 medium-columns-3 small-columns-2">
+
+						<div th:each="pro: ${allPro}"
+							class="product-small col has-hover product type-product post-844 status-publish instock 
+														product_cat-speaker product_tag-marshall product_tag-marshall-woburn has-post-thumbnail 
+																	shipping-taxable purchasable product-type-variable has-default-attributes">
+							<div class="col-inner">
+
+								<div class="badge-container absolute left top z-1"></div>
+								<div class="product-small box ">
+									<div class="box-image">
+										<div class="image-fade_in_back">
+											<a th:href="@{|/product/productDetail/${pro.proId}|}"> <img
+												alt="" width="300" height="300"
+												th:src="@{'/images/product/'+ ${pro.image}}">
+											</a>
+										</div>
+										<div class="image-tools is-small top right show-on-hover"></div>
+										<div
+											class="image-tools is-small hide-for-small bottom left show-on-hover"></div>
+										<div
+											class="image-tools grid-tools text-center hide-for-small bottom hover-slide-in show-on-hover">
+											<a class="quick-view quick-view-added" data-prod="844"
+												th:href="@{|/cart/add/${pro.proId}|}">Thêm vào giỏ hàng</a>
+										</div>
+									</div>
+
+									<div class="box-text box-text-products">
+										<div class="title-wrapper">
+											<th:block
+												th:if="${pro.productType.typeId == 1 || pro.productType.typeId == 2 }">
+												<p
+													class="category uppercase is-smaller no-text-overflow product-cat op-7">
+													Marshall Speaker</p>
+											</th:block>
+											<th:block th:if="${pro.productType.typeId == 3 }">
+												<p
+													class="category uppercase is-smaller no-text-overflow product-cat op-7">
+													Marshall Headphones</p>
+											</th:block>
+											<th:block
+												th:if="${pro.productType.typeId == 4 || pro.productType.typeId == 5}">
+												<p
+													class="category uppercase is-smaller no-text-overflow product-cat op-7">
+													Amplifiers</p>
+											</th:block>
+											<th:block th:if="${pro.productType.typeId == 6 }">
+												<p
+													class="category uppercase is-smaller no-text-overflow product-cat op-7">
+													Phụ kiện</p>
+											</th:block>
+
+											<p class="name product-title woocommerce-loop-product__title">
+												<a th:href="@{|/product/productDetail/${pro.proId}|}"
+													th:text="${pro.proName}"
+													class="woocommerce-LoopProduct-link woocommerce-loop-product__link"></a>
+											</p>
+										</div>
+										<div class="price-wrapper">
+											<span class="price"> <span
+												class="woocommerce-Price-amount amount"> <bdi
+														th:text="${#numbers.formatDecimal(pro.price,0,'COMMA',0,'POINT')+ pro.unit}"></bdi>
+											</span>
+											</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<!-- row -->
+
+					<div class="container">
+						<nav class="woocommerce-pagination">
+							<ul class="page-numbers nav-pagination links text-center">
+								<th:block th:each="page: ${listPages}">
+									<li><a class="page-number "
+										th:href="@{|/product/allProduct?page=${page}| }"
+										th:text="${page}"></a></li>
+								</th:block>
+							</ul>
+						</nav>
+					</div>
+
+				</div>
+				<!-- shop container -->
+			</div>
+		</div>
+
+	</main>
+
+	<th:block th:include="footer"></th:block>
+</body>
+</html>

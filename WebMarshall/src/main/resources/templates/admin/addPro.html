@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Quan ly</title>
+<!-- Tell the browser to be responsive to screen width -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet"
+	href="../../plugins/fontawesome-free/css/all.min.css">
+<!-- Ionicons -->
+<link rel="stylesheet"
+	href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+<!-- Tempusdominus Bbootstrap 4 -->
+<link rel="stylesheet"
+	href="../../plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+<!-- iCheck -->
+<link rel="stylesheet"
+	href="../../plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+<!-- JQVMap -->
+<link rel="stylesheet" href="../../plugins/jqvmap/jqvmap.min.css">
+<!-- Theme style -->
+<link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+<!-- overlayScrollbars -->
+<link rel="stylesheet"
+	href="../../plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+<!-- Daterange picker -->
+<link rel="stylesheet"
+	href="../../plugins/daterangepicker/daterangepicker.css">
+<!-- summernote -->
+<link rel="stylesheet"
+	href="../../plugins/summernote/summernote-bs4.css">
+<!-- Google Font: Source Sans Pro -->
+<link
+	href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700"
+	rel="stylesheet">
+</head>
+<body>
+
+	<th:block th:include="admin/management"></th:block>
+
+	<div class="content-wrapper">
+		<!-- Content Header (Page header) -->
+		<section class="content-header">
+			<div class="container-fluid">
+				<div class="row mb-2">
+					<div class="col-sm-6">
+						<h1>Sản phẩm</h1>
+					</div>
+					<div class="col-sm-6">
+						<ol class="breadcrumb float-sm-right">
+							<li class="breadcrumb-item"><a href="#">Home</a></li>
+							<li class="breadcrumb-item active">Sản phẩm</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+			<!-- /.container-fluid -->
+		</section>
+
+		<!-- Main content -->
+		<section class="content">
+
+			<!-- Default box -->
+			<div class="card">
+				<div class="card-header">
+					<h3 class="card-title">Thêm sản phẩm</h3>
+
+					<div class="card-tools">
+						<button type="button" class="btn btn-tool"
+							data-card-widget="collapse" data-toggle="tooltip"
+							title="Collapse">
+							<i class="fas fa-minus"></i>
+						</button>
+						<button type="button" class="btn btn-tool"
+							data-card-widget="remove" data-toggle="tooltip" title="Remove">
+							<i class="fas fa-times"></i>
+						</button>
+					</div>
+				</div>
+				<div class="card-body p-0">
+					<form th:action="@{/admin/addPro}" method="post"
+						th:object="${pro}" enctype="multipart/form-data">
+						<table border="1">
+							<tr>
+								<td>Phân loại sản phẩm</td>
+								<td >
+									<select th:field="*{productType.typeId}" >
+    									<option th:each="type: ${listType}" 
+            									th:value="${type.typeId}" th:text="${type.typeName}">
+    									</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td>Mã sản phẩm</td>
+								<td><input th:field="*{proId}" type="text" required="required"></td>
+							</tr>
+							<tr>
+								<td>Tên sản phẩm</td>
+								<td><input th:field="*{proName}" type="text" required="required"></td>
+							</tr>
+							<tr>
+								<td>Giá</td>
+								<td><input th:field="*{price}" type="text" required="required"></td>
+							</tr>
+							<tr>
+								<td>Đơn vị tính</td>
+								<td><input th:field="*{unit}" type="text" required="required"></td>
+							</tr>
+							<tr>
+								<td>Khuyến mại</td>
+								<td><input th:field="*{discount}" type="text" required="required"></td>
+							</tr>
+							<tr>
+								<td>Ngày nhập</td>
+								<td><input th:field="*{createDate}" type="date" required="required"></td>
+							</tr>
+							<tr>
+								<td>Mô tả</td>
+								<td><input th:field="*{descriptions}" type="text"></td>
+							</tr>
+							<tr>
+								<td>Mô tả chi tiết</td>
+								<td><input th:field="*{unit}" type="text"></td>
+							</tr>
+							<tr>
+								<td>Số lượng</td>
+								<td><input th:field="*{quantity}" type="number" required="required"></td>
+							</tr>
+							<tr>
+								<td>Trạng thái</td>
+								<td>
+									<input type="checkbox" th:field="*{status}"/>
+								</td>
+							</tr>
+							<tr>
+								<td>Ảnh</td>
+								<td><input type="file" name="imgPro" /></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td><input type="Submit" value="Thêm"> <input
+									type="reset" value="Clear"></td>
+							</tr>
+						</table>
+					</form>
+
+				</div>
+				<!-- /.card-body -->
+
+			</div>
+			<!-- /.card -->
+
+		</section>
+		<!-- /.content -->
+	</div>
+</body>
+</html>

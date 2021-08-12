@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<title>Giỏ hàng</title>
+<link rel="stylesheet" type="text/css" href="/styles.css">
+
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel='stylesheet' id='mbwph-style-css'
+	href='../wp-content/plugins/wp-helper-lite/public/partials/assets/css/mbwph-style24b2.css?ver=5.5.5'
+	type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-css'
+	href='../wp-includes/css/dist/block-library/style.min24b2.css?ver=5.5.5'
+	type='text/css' media='all' />
+<link rel='stylesheet' id='wc-block-vendors-style-css'
+	href='../wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/vendors-stylee100.css?ver=4.7.2'
+	type='text/css' media='all' />
+<link rel='stylesheet' id='wc-block-style-css'
+	href='../wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/stylee100.css?ver=4.7.2'
+	type='text/css' media='all' />
+<link rel='stylesheet' id='flatsome-icons-css'
+	href='../wp-content/themes/flatsome/assets/css/fl-iconsae34.css?ver=3.12'
+	type='text/css' media='all' />
+<link rel='stylesheet' id='flatsome-main-css'
+	href='../wp-content/themes/flatsome/assets/css/flatsome2916.css?ver=3.13.1'
+	type='text/css' media='all' />
+<link rel='stylesheet' id='flatsome-shop-css'
+	href='../wp-content/themes/flatsome/assets/css/flatsome-shop2916.css?ver=3.13.1'
+	type='text/css' media='all' />
+<link rel='stylesheet' id='flatsome-style-css'
+	href='../wp-content/themes/flatsome-child/style6aec.css?ver=3.0'
+	type='text/css' media='all' />
+<link rel='stylesheet' id='dashicons-css'
+	href='../wp-includes/css/dashicons.min24b2.css?ver=5.5.5'
+	type='text/css' media='all' />
+<link rel='stylesheet' id='flatsome-googlefonts-css'
+	href='http://fonts.googleapis.com/css?family=Montserrat%3Aregular%2Cdefault%2Cdefault%2C400%7CDancing+Script%3Aregular%2C400&amp;display=swap&amp;ver=3.9'
+	type='text/css' media='all' />
+<link rel="https://api.w.org/" href="wp-json/index.html" />
+<link rel="alternate" type="application/json"
+	href="../wp-json/wp/v2/pages/61.json" />
+<link rel="EditURI" type="application/rsd+xml" title="RSD"
+	href="xmlrpc0db0.html?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml"
+	href="../wp-includes/wlwmanifest.xml" />
+<link rel='shortlink' href='index.html' />
+<link rel="alternate" type="application/json+oembed"
+	href="../wp-json/oembed/1.0/embedc187.json?url=https%3A%2F%2Fmarshallsaigon.com%2F" />
+<link rel="alternate" type="text/xml+oembed"
+	href="../wp-json/oembed/1.0/embed3b9e?url=https%3A%2F%2Fmarshallsaigon.com%2F&amp;format=xml" />
+<link rel="icon"
+	href="../wp-content/uploads/2020/08/cropped-Logo-Marshall-1-2-32x32.png"
+	sizes="32x32" />
+<link rel="icon"
+	href="../static/wp-content/uploads/2020/08/cropped-Logo-Marshall-1-2-192x192.png"
+	sizes="192x192" />
+<link rel="apple-touch-icon"
+	href="../wp-content/uploads/2020/08/cropped-Logo-Marshall-1-2-180x180.png" />
+</head>
+
+<body>
+	<th:block th:include="/header"></th:block>
+
+	<main id="main" class="">
+		<div class="checkout-page-title page-title">
+			<div class="page-title-inner flex-row medium-flex-wrap container">
+				<div class="flex-col flex-grow medium-text-center">
+					<nav
+						class="breadcrumbs flex-row flex-row-center heading-font checkout-breadcrumbs text-center strong h2 uppercase">
+						<a th:href="@{/cart/shoppingCart}" class="current">Shopping
+							Cart</a> <span class="divider hide-for-small"><i
+							class="icon-angle-right"></i></span> <a th:href="@{/order/checkout}"
+							class="no-click hide-for-small">Checkout details</a> <span
+							class="divider hide-for-small"><i class="icon-angle-right"></i></span>
+						<a href="#" class="no-click hide-for-small">Order Complete</a>
+					</nav>
+				</div>
+			</div>
+		</div>
+		<div class="cart-container container page-wrapper page-checkout">
+			<div class="woocommerce">
+				<div class="text-center pt pb">
+					<div class="woocommerce-notices-wrapper"></div>
+					<th:block th:if="${count == 0}">
+						<p class="cart-empty woocommerce-info">Chưa có sản phẩm nào
+							trong giỏ hàng.</p>
+						<p class="return-to-shop">
+							<a class="button primary wc-backward" th:href="@{/index}">
+								Quay trở lại cửa hàng </a>
+						</p>
+					</th:block>
+					<th:block th:if="${count != 0}">
+					
+						
+							<div class="row row-main">
+							<div class="large-12 col">
+								<div class="col-inner">
+									<div class="woocommerce">
+										<div class="woocommerce-notices-wrapper"></div>
+										
+										<div class="woocommerce row row-large row-divided">
+											<div class="col large-7 pb-0 ">
+												<h5 class="mb-4">
+													Giỏ hàng (<span th:text="${count}"></span> sản phẩm)
+												</h5>
+												
+													<div class="cart-wrapper sm-touch-scroll">
+													
+														<table
+															class="shop_table shop_table_responsive cart woocommerce-cart-form__contents"
+															cellspacing="0">
+															<thead>
+																<tr>
+																	<th class="product-name" colspan="3">Sản phẩm</th>
+																	<th class="product-price">Giá</th>
+																	<th class="product-quantity">Số lượng</th>
+																	<th class="product-subtotal">Tạm tính</th>
+																</tr>
+															</thead>
+															<tbody>
+
+																<tr th:each="cart: ${listCart}" class="woocommerce-cart-form__cart-item cart_item">
+																	<form method="POST" th:action="@{/cart/update}">
+																	
+																		
+																	<td class="product-remove">
+																		<a th:href="@{|/cart/remove/${cart.proId}|}"
+																		class="remove" aria-label="Xóa sản phẩm này"
+																		data-product_id="765"
+																		data-product_sku="7340055355315H">×</a>
+																	</td>
+
+																	<td class="product-thumbnail"><a href=""><img
+																			width="100" height="100"
+																			th:src="@{'/images/product/'+ ${cart.image}}"></a></td>
+
+																	<td class="product-name" data-title="Sản phẩm">
+																		<a th:text="${cart.proName}" href=""></a>
+																		
+																		<div class="show-for-small mobile-product-price">
+																			<span class="mobile-product-price__qty"
+																				th:value="${cart.quantity}" th:name="quantity"
+																				onblur="this.form.submit()"> x </span> <span
+																				class="woocommerce-Price-amount amount"><bdi
+																					th:text="${#numbers.formatDecimal(cart.price,0,'COMMA',0,'POINT')+ cart.unit}"></bdi></span>
+																		</div>
+																	</td>
+
+																	<td class="product-price" data-title="Giá">
+																		<span class="woocommerce-Price-amount amount">
+																			<bdi th:text="${#numbers.formatDecimal(cart.price,0,'COMMA',0,'POINT')+ cart.unit}"></bdi>
+																		</span>
+																	</td>
+
+																	<td class="product-quantity" data-title="Số lượng">
+																		<div class="quantity buttons_added form-flat">
+																			<input type="button" value="-" class="minus button is-form">
+																				 <label class="screen-reader-text" for="quantity_6106b05f01b7c"></label>
+																			<input type="hidden" name="proId" th:value="${cart.proId}" />	 
+																			<input
+																				type="number" id="quantity_6106b05f01b7c"
+																				class="input-text qty text" step="1" min="0"
+																				max="29" title="SL" size="4" placeholder=""
+																				inputmode="numeric" th:value="${cart.quantity}"
+																				name="quantity" onblur="this.form.submit()">
+
+																			<input type="button" value="+"
+																				class="plus button is-form">
+																		</div>
+																	</td>
+
+																	<td class="product-subtotal" data-title="Tạm tính">
+																		<span class="woocommerce-Price-amount amount"><bdi
+																				th:text="${#numbers.formatDecimal(cart.price*cart.quantity,0,'COMMA',0,'POINT')+ cart.unit}"></bdi></span>
+																	</td>
+																	</form>
+																</tr>
+
+
+																<tr>
+																	<td colspan="6" class="actions clear">
+
+
+																		<div class="continue-shopping pull-left text-left">
+																			<a
+																				class="button-continue-shopping button primary is-outline"
+																				th:href="@{/product/allProduct}"> ←&nbsp;Tiếp tục xem sản
+																				phẩm </a>
+																		</div>
+
+																		
+																	</td>
+																	
+																</tr>
+
+															</tbody>
+														</table>
+														
+														
+													</div>
+												
+											</div>
+
+
+											<div class="cart-collaterals large-5 col pb-0">
+
+												<div class="cart-sidebar col-inner ">
+													<div class="cart_totals ">
+
+														<table cellspacing="0">
+															<thead>
+																<tr>
+																	<th class="product-name" colspan="2"
+																		style="border-width: 3px;">Cộng giỏ hàng</th>
+																</tr>
+															</thead>
+														</table>
+
+														<h2>Cộng giỏ hàng</h2>
+
+														<table cellspacing="0"
+															class="shop_table shop_table_responsive">
+
+															<tbody>
+																<tr class="cart-subtotal">
+																	<th>Số lượng</th>
+																	<td data-title="Tạm tính"><span
+																		class="woocommerce-Price-amount amount"><bdi
+																				th:text="${count}"></bdi></span></td>
+																</tr>
+																<tr class="cart-subtotal">
+																	<th>Tạm tính</th>
+																	<td data-title="Tạm tính"><span
+																		class="woocommerce-Price-amount amount"><bdi
+																				th:text="${#numbers.formatDecimal(amount,0,'COMMA',0,'POINT')}"></bdi></span><b>đ</b></td>
+																</tr>
+
+																<tr class="woocommerce-shipping-totals shipping ">
+																	<td class="shipping__inner" colspan="2">
+																		<table class="shipping__table ">
+																			<tbody>
+																				<tr>
+																					<th>Giao hàng</th>
+																					<td data-title="Giao hàng">
+																						<ul id="shipping_method"
+																							class="shipping__list woocommerce-shipping-methods">
+																							<li class="shipping__list_item"><input
+																								type="hidden" name="shipping_method[0]"
+																								data-index="0"
+																								id="shipping_method_0_free_shipping1"
+																								value="free_shipping:1" class="shipping_method"><label
+																								class="shipping__list_label"
+																								for="shipping_method_0_free_shipping1">Giao
+																									hàng miễn phí</label></li>
+																						</ul>
+																						<p class="woocommerce-shipping-destination">
+																							Tùy chọn giao hàng sẽ được cập nhật trong quá
+																							trình thanh toán.</p>
+
+																						
+
+																					</td>
+																				</tr>
+																			</tbody>
+																		</table>
+																	</td>
+																</tr>
+
+																<tr class="order-total">
+																	<th>Tổng</th>
+																	<td data-title="Tổng"><strong><span
+																			class="woocommerce-Price-amount amount"><bdi
+																					th:text="${#numbers.formatDecimal(amount,0,'COMMA',0,'POINT')}"></bdi></span></strong><b>đ</b>
+																	</td>
+																</tr>
+
+															</tbody>
+														</table>
+
+														<div class="wc-proceed-to-checkout">
+
+															<a th:href="@{/order/checkout}"
+																class="checkout-button button alt wc-forward"> Tiến
+																hành thanh toán</a>
+														</div>
+													</div>
+													<div class="cart-sidebar-content relative"></div>
+												</div>
+												<p><a class="btn btn-outline-danger btn-sm" th:href="@{/cart/clear}">Xóa
+													giỏ hàng</a></p>
+											</div>
+										</div>
+										
+										<div class="cart-footer-content after-cart-content relative"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						
+					</th:block>
+
+				</div>
+
+			</div>
+		</div>
+	</main>
+
+	<th:block th:include="/footer"></th:block>
+
+</body>
+
+</html>

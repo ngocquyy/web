@@ -1,0 +1,688 @@
+img.wp-smiley, img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+
+.woocommerce form .form-row .required {
+	visibility: visible;
+}
+
+root { --primary-color: #57595b;
+}
+
+.sticky-add-to-cart--active, #wrapper, #main, #main.dark {
+	background-color: #ffffff
+}
+
+.header-main {
+	height: 100px
+}
+
+#logo img {
+	max-height: 100px
+}
+
+#logo {
+	width: 200px;
+}
+
+.header-bottom {
+	min-height: 10px
+}
+
+.header-top {
+	min-height: 20px
+}
+
+.transparent .header-main {
+	height: 265px
+}
+
+.transparent #logo img {
+	max-height: 265px
+}
+
+.has-transparent+.page-title:first-of-type, .has-transparent+#main>.page-title,
+	.has-transparent+#main>div>.page-title, .has-transparent+#main .page-header-wrapper:first-of-type .page-title
+	{
+	padding-top: 315px;
+}
+
+.header.show-on-scroll, .stuck .header-main {
+	height: 70px !important
+}
+
+.stuck #logo img {
+	max-height: 70px !important
+}
+
+.search-form {
+	width: 100%;
+}
+
+.header-bg-color, .header-wrapper {
+	background-color: rgba(255, 255, 255, 0.9)
+}
+
+.header-bottom {
+	background-color: #f1f1f1
+}
+
+.header-main .nav>li>a {
+	line-height: 16px
+}
+
+.stuck .header-main .nav>li>a {
+	line-height: 50px
+}
+
+@media ( max-width : 549px) {
+	.header-main {
+		height: 70px
+	}
+	#logo img {
+		max-height: 70px
+	}
+} /* Color */
+.accordion-title.active, .has-icon-bg .icon .icon-inner, .logo a,
+	.primary.is-underline, .primary.is-link, .badge-outline .badge-inner,
+	.nav-outline>li.active>a, .nav-outline>li.active>a, .cart-icon strong,
+	[data-color='primary'], .is-outline.primary {
+	color: #57595b;
+} /* Color !important */
+[data-text-color="primary"] {
+	color: #57595b !important;
+} /* Background Color */
+[data-text-bg="primary"] {
+	background-color: #57595b;
+} /* Background */
+.scroll-to-bullets a, .featured-title, .label-new.menu-item>a:after,
+	.nav-pagination>li>.current, .nav-pagination>li>span:hover,
+	.nav-pagination>li>a:hover, .has-hover:hover .badge-outline .badge-inner,
+	button[type="submit"], .button.wc-forward:not(.checkout):not(.checkout-button),
+	.button.submit-button, .button.primary:not(.is-outline),
+	.featured-table .title, .is-outline:hover, .has-icon:hover .icon-label,
+	.nav-dropdown-bold .nav-column li>a:hover, .nav-dropdown.nav-dropdown-bold>li>a:hover,
+	.nav-dropdown-bold.dark .nav-column li>a:hover, .nav-dropdown.nav-dropdown-bold.dark>li>a:hover,
+	.is-outline:hover, .tagcloud a:hover, .grid-tools a, input[type='submit']:not(.is-form),
+	.box-badge:hover .box-text, input.button.alt, .nav-box>li>a:hover,
+	.nav-box>li.active>a, .nav-pills>li.active>a, .current-dropdown .cart-icon strong,
+	.cart-icon:hover strong, .nav-line-bottom>li>a:before, .nav-line-grow>li>a:before,
+	.nav-line>li>a:before, .banner, .header-top, .slider-nav-circle .flickity-prev-next-button:hover svg,
+	.slider-nav-circle .flickity-prev-next-button:hover .arrow, .primary.is-outline:hover,
+	.button.primary:not(.is-outline), input[type='submit'].primary, input[type='submit'].primary,
+	input[type='reset'].button, input[type='button'].primary, .badge-inner
+	{
+	background-color: #57595b;
+} /* Border */
+.nav-vertical.nav-tabs>li.active>a, .scroll-to-bullets a.active,
+	.nav-pagination>li>.current, .nav-pagination>li>span:hover,
+	.nav-pagination>li>a:hover, .has-hover:hover .badge-outline .badge-inner,
+	.accordion-title.active, .featured-table, .is-outline:hover, .tagcloud a:hover,
+	blockquote, .has-border, .cart-icon strong:after, .cart-icon strong,
+	.blockUI:before, .processing:before, .loading-spin, .slider-nav-circle .flickity-prev-next-button:hover svg,
+	.slider-nav-circle .flickity-prev-next-button:hover .arrow, .primary.is-outline:hover
+	{
+	border-color: #57595b
+}
+
+.nav-tabs>li.active>a {
+	border-top-color: #57595b
+}
+
+.widget_shopping_cart_content .blockUI.blockOverlay:before {
+	border-left-color: #57595b
+}
+
+.woocommerce-checkout-review-order .blockUI.blockOverlay:before {
+	border-left-color: #57595b
+} /* Fill */
+.slider .flickity-prev-next-button:hover svg, .slider .flickity-prev-next-button:hover .arrow
+	{
+	fill: #57595b;
+} /* Background Color */
+[data-icon-label]:after, .secondary.is-underline:hover, .secondary.is-outline:hover,
+	.icon-label, .button.secondary:not(.is-outline), .button.alt:not(.is-outline),
+	.badge-inner.on-sale, .button.checkout, .single_add_to_cart_button,
+	.current .breadcrumb-step {
+	background-color: #afacaa;
+}
+
+[data-text-bg="secondary"] {
+	background-color: #afacaa;
+} /* Color */
+.secondary.is-underline, .secondary.is-link, .secondary.is-outline,
+	.stars a.active, .star-rating:before, .woocommerce-page .star-rating:before,
+	.star-rating span:before, .color-secondary {
+	color: #afacaa
+} /* Color !important */
+[data-text-color="secondary"] {
+	color: #afacaa !important;
+} /* Border */
+.secondary.is-outline:hover {
+	border-color: #afacaa
+}
+
+body {
+	font-family: "Montserrat", sans-serif
+}
+
+body {
+	color: #262626
+}
+
+.nav>li>a {
+	font-family: "Montserrat", sans-serif;
+}
+
+.mobile-sidebar-levels-2 .nav>li>ul>li>a {
+	font-family: "Montserrat", sans-serif;
+}
+
+.nav>li>a {
+	font-weight: 400;
+}
+
+.mobile-sidebar-levels-2 .nav>li>ul>li>a {
+	font-weight: 400;
+}
+
+h1, h2, h3, h4, h5, h6, .heading-font, .off-canvas-center .nav-sidebar.nav-vertical>li>a
+	{
+	font-family: "Montserrat", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, .heading-font {
+	color: #555555;
+}
+
+.alt-font {
+	font-family: "Dancing Script", sans-serif;
+}
+
+.alt-font {
+	font-weight: 400 !important;
+}
+
+.header:not(.transparent) .header-nav-main.nav>li>a {
+	color: #000000;
+}
+
+.header:not(.transparent) .header-bottom-nav.nav>li>a:hover, .header:not(.transparent) .header-bottom-nav.nav>li.active>a,
+	.header:not(.transparent) .header-bottom-nav.nav>li.current>a, .header:not(.transparent) .header-bottom-nav.nav>li>a.active,
+	.header:not(.transparent) .header-bottom-nav.nav>li>a.current {
+	color: #767574;
+}
+
+.header-bottom-nav.nav-line-bottom>li>a:before, .header-bottom-nav.nav-line-grow>li>a:before,
+	.header-bottom-nav.nav-line>li>a:before, .header-bottom-nav.nav-box>li>a:hover,
+	.header-bottom-nav.nav-box>li.active>a, .header-bottom-nav.nav-pills>li>a:hover,
+	.header-bottom-nav.nav-pills>li.active>a {
+	color: #FFF !important;
+	background-color: #767574;
+}
+
+a {
+	color: #4e657b;
+}
+
+.shop-page-title.featured-title .title-overlay {
+	background-color: rgba(0, 0, 0, 0.3);
+}
+
+.shop-page-title.featured-title .title-bg {
+	background-image:
+		url(../wp-content/uploads/2019/11/new-Category-speakers.jpg);
+}
+
+@media screen and (min-width: 550px) {
+	.products .box-vertical .box-image {
+		min-width: 300px !important;
+		width: 300px !important;
+	}
+}
+
+.footer-2 {
+	background-image:
+		url('../wp-content/uploads/2019/11/tai-nghe-marshall-major-2010.jpg');
+}
+
+.footer-1 {
+	background-color: #383838
+}
+
+.absolute-footer, html {
+	background-color: #383838
+}
+
+.page-title-small+main .product-container>.row {
+	padding-top: 0;
+}
+
+.label-new.menu-item>a:after {
+	content: "New";
+}
+
+.label-hot.menu-item>a:after {
+	content: "Hot";
+}
+
+.label-sale.menu-item>a:after {
+	content: "Sale";
+}
+
+.label-popular.menu-item>a:after {
+	content: "Popular";
+}
+
+#text-box-718023035 {
+	width: 27%;
+}
+
+#text-box-718023035 .text {
+	font-size: 100%;
+}
+
+#banner-326793068 {
+	padding-top: 500px;
+}
+
+#banner-326793068 .bg.bg-loaded {
+	background-image:
+		url(../wp-content/uploads/2020/09/marshall_stanmore-II_bluetooth-1400x788.jpg);
+}
+
+#gap-1241732244 {
+	padding-top: 33px;
+}
+
+#text-box-1121573895 {
+	width: 21%;
+}
+
+#text-box-1121573895 .text {
+	font-size: 100%;
+}
+
+#banner-1173770686 {
+	padding-top: 369px;
+}
+
+#banner-1173770686 .bg.bg-loaded {
+	background-image:
+		url(../wp-content/uploads/2020/09/Marshall_emberton_black-and-brass-4-1200x800.jpg);
+}
+
+#banner-1173770686 .bg {
+	background-position: 79% 61%;
+}
+
+#gap-1064679216 {
+	padding-top: 30px;
+}
+
+#text-box-1658042418 .text {
+	background-color: rgba(255, 255, 255, 0);
+	font-size: 100%;
+}
+
+#text-box-1658042418 {
+	width: 53%;
+}
+
+@media ( min-width :550px) {
+	#text-box-1658042418 {
+		width: 53%;
+	}
+}
+
+#banner-987281414 {
+  padding-top: 56.25%;
+}
+#banner-987281414 .bg.bg-loaded {
+  background-image: url(../wp-content/uploads/2021/05/MarshallSG-m-banner-stayhome.jpg);
+}
+#banner-987281414 .bg {
+  background-position: 51% 57%;
+}
+@media (min-width:550px) {
+  #banner-987281414 {
+    padding-top: 50%;
+  }
+}
+
+
+#text-box-1581869575 {
+	width: 60%;
+}
+
+#text-box-1581869575 .text {
+	font-size: 100%;
+}
+
+#banner-829399125 {
+	padding-top: 99.99%;
+}
+
+#banner-829399125 .bg.bg-loaded {
+	background-image:
+		url(../static/images/tai-nghe-marshall-800x800.jpg);
+}
+
+#banner-829399125 .overlay {
+	background-color: rgba(0, 0, 0, 0.17);
+}
+
+@media ( min-width :550px) {
+	#banner-829399125 {
+		padding-top: 500px;
+	}
+}
+
+#text-box-1108410819 {
+	width: 77%;
+}
+
+#text-box-1108410819 .text {
+	font-size: 100%;
+}
+
+@media ( min-width :550px) {
+	#text-box-1108410819 {
+		width: 69%;
+	}
+}
+
+#banner-438236415 {
+	padding-top: 99.99%;
+}
+
+#banner-438236415 .bg.bg-loaded {
+	background-image:
+		url(../wp-content/uploads/2019/11/loa-marshall-bluetooth-800x800.jpg);
+}
+
+#banner-438236415 .overlay {
+	background-color: rgba(0, 0, 0, 0.17);
+}
+
+@media ( min-width :550px) {
+	#banner-438236415 {
+		padding-top: 500px;
+	}
+}
+
+#image_1120549933 {
+	width: 100%;
+}
+
+#image_305859211 {
+	width: 100%;
+}
+
+#image_903044212 {
+	width: 100%;
+}
+
+#text-box-271042441 {
+	width: 73%;
+}
+
+#text-box-271042441 .text {
+	font-size: 100%;
+}
+
+#banner-1954910291 {
+	padding-top: 99.99%;
+}
+
+#banner-1954910291 .bg.bg-loaded {
+	background-image:
+		url(../wp-content/uploads/2020/08/marshall-woburn-ii-2-2.jpg);
+}
+
+#banner-1954910291 .bg {
+	background-position: 46% 78%;
+}
+
+@media ( min-width :550px) {
+	#banner-1954910291 {
+		padding-top: 360px;
+	}
+}
+
+#text-box-17095717 {
+	width: 34%;
+}
+
+#text-box-17095717 .text {
+	font-size: 100%;
+}
+
+#banner-1760690851 {
+	padding-top: 99.99%;
+}
+
+#banner-1760690851 .bg.bg-loaded {
+	background-image:
+		url(../wp-content/uploads/2020/09/Martin-X-Series-DX-Woodstock-50th-Acoustic-Guitar--1201x800.jpg);
+}
+
+@media ( min-width :550px) {
+	#banner-1760690851 {
+		padding-top: 500px;
+	}
+}
+
+#image_2131518160 {
+	width: 100%;
+}
+
+#image_35955350 {
+	width: 100%;
+}
+
+#banner-grid-1970209485 .grid-col-1 {
+	height: 600px
+}
+
+#banner-grid-1970209485 .grid-col-1-2 {
+	height: 300px
+}
+
+#banner-grid-1970209485 .grid-col-1-3 {
+	height: 200px
+}
+
+#banner-grid-1970209485 .grid-col-2-3 {
+	height: 400px
+}
+
+#banner-grid-1970209485 .grid-col-1-4 {
+	height: 150px
+}
+
+#banner-grid-1970209485 .grid-col-3-4 {
+	height: 450px
+}
+
+#page-header-634899441 .title-bg {
+	background-image:
+		url(../wp-content/uploads/2020/09/Marshall-amp-origin.jpg);
+	background-position: 0% 75%;
+}
+
+#gap-1443492800 {
+	padding-top: 37px;
+}
+
+#gap-1048437961 {
+	padding-top: 30px;
+}
+
+#gap-235097699 {
+	padding-top: 35px;
+}
+
+#map-1321650762 .map-inner {
+	background-color: rgba(255, 255, 255, 0.83);
+	max-width: 100%;
+}
+
+#map-1321650762 .map-height {
+	height: 499px;
+}
+
+@media ( min-width :550px) {
+	#map-1321650762 .map-inner {
+		max-width: 40%;
+	}
+}
+
+@media ( min-width :850px) {
+	#map-1321650762 .map-inner {
+		max-width: 79%;
+	}
+}
+
+#section_848543045 {
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+#section_848543045 .section-bg-overlay {
+	background-color: rgba(81, 83, 84, 0.4);
+}
+
+#section_848543045 .section-bg.bg-loaded {
+	background-image:
+		url(../wp-content/uploads/2019/11/new-Category-speakers-Desktop%401.41x.jpg);
+}
+
+#section_848543045 .section-bg {
+	background-position: 54% 59%;
+}
+
+#text-box-869819203 {
+	width: 71%;
+}
+
+#text-box-869819203 .text {
+	font-size: 100%;
+}
+
+@media ( min-width :550px) {
+	#text-box-869819203 {
+		width: 38%;
+	}
+}
+
+#banner-735505820 {
+	padding-top: 99.99%;
+}
+
+#banner-735505820 .bg.bg-loaded {
+	background-image:
+		url(../wp-content/uploads/2021/02/marshall-monitor-ii-anc-2021.jpg);
+}
+
+#banner-735505820 .bg {
+	background-position: 51% 1%;
+}
+
+@media ( min-width :550px) {
+	#banner-735505820 {
+		padding-top: 500px;
+	}
+}
+
+#gap-467053856 {
+	padding-top: 35px;
+}
+
+#gap-1326172418 {
+	padding-top: 30px;
+}
+
+#gap-1443498607 {
+	padding-top: 34px;
+}
+#text-box-141404811 {
+	width: 60%;
+}
+
+#text-box-141404811 .text {
+	font-size: 100%;
+}
+
+@media ( min-width :550px) {
+	#text-box-141404811 {
+		width: 40%;
+	}
+}
+#banner-1694101741 {
+	padding-top: 500px;
+}
+
+#banner-1694101741 .bg.bg-loaded {
+	background-image:
+		url(../wp-content/uploads/2020/04/amps-marshall-1400x388.jpg);
+}
+
+#banner-1694101741 .overlay {
+	background-color: rgba(0, 0, 0, 0.31);
+}
+#gap-1488636131 {
+	padding-top: 30px;
+}
+#image_71175910 {
+	width: 100%;
+}
+#text-box-1291046375 {
+	width: 42%;
+}
+
+#text-box-1291046375 .text {
+	font-size: 100%;
+}
+#banner-1976904892 .bg.bg-loaded {
+	background-image:
+		url(../wp-content/uploads/2020/09/Marshall-amp-origin-1400x335.jpg);
+}
+
+#banner-1976904892 .bg {
+	background-position: 0% 0%;
+}
+#gap-1098879622 {
+	padding-top: 30px;
+}
+#text-box-2092879618 {
+	width: 36%;
+}
+
+#text-box-2092879618 .text {
+	font-size: 100%;
+}
+#banner-1155522061 .bg.bg-loaded {
+	background-image:
+		url(../wp-content/uploads/2020/09/marshall-saigon-special-combo-1400x335.jpg);
+}
+#image_1483133380 {
+	width: 100%;
+}
+#gap-1394545060 {
+	padding-top: 30px;
+}
+#gap-1629450577 {
+	padding-top: 30px;
+}
+#gap-1471751833 {
+	padding-top: 30px;
+}

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org">
+<head>
+	<link rel="stylesheet" type="text/css" href="/style.css" />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel='stylesheet' id='mbwph-style-css'
+	href='../wp-content/plugins/wp-helper-lite/public/partials/assets/css/mbwph-style24b2.css?ver=5.5.5'
+	type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-css'
+	href='../wp-includes/css/dist/block-library/style.min24b2.css?ver=5.5.5'
+	type='text/css' media='all' />
+<link rel='stylesheet' id='wc-block-vendors-style-css'
+	href='../wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/vendors-stylee100.css?ver=4.7.2'
+	type='text/css' media='all' />
+<link rel='stylesheet' id='wc-block-style-css'
+	href='../wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/stylee100.css?ver=4.7.2'
+	type='text/css' media='all' />
+<link rel='stylesheet' id='flatsome-icons-css'
+	href='../wp-content/themes/flatsome/assets/css/fl-iconsae34.css?ver=3.12'
+	type='text/css' media='all' />
+<link rel='stylesheet' id='flatsome-main-css'
+	href='../wp-content/themes/flatsome/assets/css/flatsome2916.css?ver=3.13.1'
+	type='text/css' media='all' />
+<link rel='stylesheet' id='flatsome-shop-css'
+	href='../wp-content/themes/flatsome/assets/css/flatsome-shop2916.css?ver=3.13.1'
+	type='text/css' media='all' />
+<link rel='stylesheet' id='flatsome-style-css'
+	href='../wp-content/themes/flatsome-child/style6aec.css?ver=3.0'
+	type='text/css' media='all' />
+<link rel='stylesheet' id='dashicons-css'
+	href='../wp-includes/css/dashicons.min24b2.css?ver=5.5.5'
+	type='text/css' media='all' />
+<link rel='stylesheet' id='flatsome-googlefonts-css'
+	href='http://fonts.googleapis.com/css?family=Montserrat%3Aregular%2Cdefault%2Cdefault%2C400%7CDancing+Script%3Aregular%2C400&amp;display=swap&amp;ver=3.9'
+	type='text/css' media='all' />
+<link rel="https://api.w.org/" href="wp-json/index.html" />
+<link rel="alternate" type="application/json"
+	href="../wp-json/wp/v2/pages/61.json" />
+<link rel="EditURI" type="application/rsd+xml" title="RSD"
+	href="xmlrpc0db0.html?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml"
+	href="../wp-includes/wlwmanifest.xml" />
+<link rel='shortlink' href='index.html' />
+<link rel="alternate" type="application/json+oembed"
+	href="../wp-json/oembed/1.0/embedc187.json?url=https%3A%2F%2Fmarshallsaigon.com%2F" />
+<link rel="alternate" type="text/xml+oembed"
+	href="../wp-json/oembed/1.0/embed3b9e?url=https%3A%2F%2Fmarshallsaigon.com%2F&amp;format=xml" />
+<link rel="icon"
+	href="../wp-content/uploads/2020/08/cropped-Logo-Marshall-1-2-32x32.png"
+	sizes="32x32" />
+<link rel="icon"
+	href="../static/wp-content/uploads/2020/08/cropped-Logo-Marshall-1-2-192x192.png"
+	sizes="192x192" />
+<link rel="apple-touch-icon"
+	href="../wp-content/uploads/2020/08/cropped-Logo-Marshall-1-2-180x180.png" />
+	<meta charset="UTF-8">
+	<title>Marshall</title>
+</head>
+
+<body>
+	<th:block th:include="header"></th:block>
+
+	<main id="main" class="">
+
+		<div class="my-account-header page-title normal-title">
+			<div class="page-title-inner flex-row container text-left">
+
+				<div class="flex-col flex-grow text-center">
+					<div class="text-center social-login">
+						<h1 class="uppercase mb-0">My Account</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="page-wrapper my-account mb">
+			<div class="container" role="main">
+				<div class="woocommerce">
+					<div class="woocommerce-notices-wrapper"></div>
+					<div class="account-container lightbox-inner">
+						<div class="account-login-inner">
+         					
+							<h3 class="uppercase">Đăng nhập</h3>
+							<p th:text="${ok}"></p>
+							<form method="POST" th:action="@{/account/login1}" >
+            					<table>
+               						<tr>
+                  						<td>User Name *</td>
+                  						<td><input type="text" name="userName" th:value="${uname}"></td>
+									</tr>
+									<tr>
+                  						<td>Password *</td>
+                  						<td><input type="password" name="password" th:value="${upass}"></td>
+									</tr>
+									<tr>
+                  						<td>Remember *</td>
+                  						<td><input type="checkbox" name="remember" ></td>
+               						</tr>   
+               						<tr>
+                  						<td>&nbsp;</td>
+                  						<td>
+                      						<input type="submit" value="Đăng nhập" />
+                      						<input type="reset"  value="Reset" />
+                  						</td>
+               						</tr>
+            					</table>
+							</form>
+							 <p class="woocommerce">
+									<a th:href="@{'/account/forgot'}">Quên mật khẩu?</a>
+								</p>
+								<p class="woocommerce">
+									<a th:href="@{'/account/register'}">Đăng ký tài khoản</a>
+								</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</main>
+	<!-- #main -->
+
+	<th:block th:include="footer"></th:block>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Thông tin thanh toán</title>
+<link rel="stylesheet" type="text/css" href="/styles.css">
+</head>
+<body>
+	<th:block th:include="/header"></th:block>
+
+	<main id="main" class="">
+		<div class="checkout-page-title page-title">
+			<div class="page-title-inner flex-row medium-flex-wrap container">
+				<div class="flex-col flex-grow medium-text-center">
+					<nav
+						class="breadcrumbs flex-row flex-row-center heading-font checkout-breadcrumbs text-center strong h2 uppercase">
+						<a th:href="@{/cart/shoppingCart}" class="hide-for-small">Shopping
+							Cart</a> <span class="divider hide-for-small"><i
+							class="icon-angle-right"></i></span> <a th:href="@{/cart/checkout}"
+							>Checkout details</a> <span
+							class="divider hide-for-small"><i class="icon-angle-right"></i></span>
+						<a href="#" class="current hide-for-small">Order Complete</a>
+					</nav>
+				</div>
+			</div>
+		</div>
+		<div class="cart-container container page-wrapper page-checkout">
+			<div class="woocommerce">
+				<div class="text-center pt pb">
+					<div class="woocommerce-notices-wrapper"></div>
+					
+					
+						<main id="main" class="">
+							<div id="content" class="content-area page-wrapper" role="main">
+								<div class="row row-main">
+									<div class="large-12 col">
+										<div class="col-inner">
+
+											<div class="woocommerce">
+												<div class="woocommerce-notices-wrapper"></div>
+												
+
+												<div class="woocommerce-notices-wrapper"></div>
+												
+												<h1 class="cart-empty woocommerce-info">Thanh toán thành công!!</h1>
+												<p>Cảm ơn quý khách đã mua hàng!</p>
+												
+												<p class="return-to-shop">
+													<a class="button primary wc-backward" th:href="@{/order/listOrder}">
+														Xem  đơn hàng </a>
+												</p>
+													
+												<p class="return-to-shop">
+													<a class="button primary wc-backward" th:href="@{/index}">
+														Quay trở lại cửa hàng </a>
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</main>
+					
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<th:block th:include="/footer"></th:block>
+
+</body>
+</html>

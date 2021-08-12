@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Mashall</title>
+</head>
+<body>
+	<th:block th:include="header"></th:block>
+
+	<main id="main" class="">
+		<div id="content" class="content-area page-wrapper" role="main">
+			<div class="row row-main">
+				<div class="large-12 col">
+					<div class="col-inner">
+						<h1 style="text-align: center;">Bảng giá Loa
+							Marshall&nbsp;&nbsp;</h1>
+						<p style="text-align: center;">Marshall là một công ty Anh
+							quốc chuyên phát triển và sản xuất các sản phẩm âm thanh như tai
+							nghe, loa, amplifier chất lượng cao.</p>
+						<p style="text-align: center;">Công ty được thành lập bởi ông
+							Jim Marshall tại Bletchley, Milton Keynes. Trong những năm 1980
+							và 1990, Marshall cho ra đời các sản phẩm chất lượng cao như các
+							dòng JCM900, dòng 6100LE hay 6100LM, gây được tiếng vang đáng chú
+							ý. Cùng thời điểm đó, phiên bản amplifier đặc biệt của Marshall
+							là Silver Jubilee 2555 cũng góp mặt trên thị trường.&nbsp;</p>
+						<p style="text-align: center;">Âm thanh của Marshall đã làm
+							rung chuyển các sân khấu trên toàn thế giới trong hơn nửa thế kỷ.
+							Và bây giờ bạn có thể nâng cao trải nghiệm âm nhạc của bạn với
+							những loa Marshall hiện đại.</p>
+						<p style="text-align: center;">Sau hơn 55 năm phát triển và
+							gặt hái vô số thành công trong lĩnh vực thiết bị âm thanh chuyên
+							nghiệp. Giờ đây, Marshall lại hướng sang thị trường âm thanh gia
+							đình bằng những sản phẩm hiện đại, đạt chất lượng cao và không hề
+							đánh mất bản sắc độc đáo của mình…</p>
+						<p style="text-align: center;">Những chiếc loa Marshall như
+							Stockwell, Kilburn, Tufton, Acton, Stanmore và Woburn chỉ khác
+							nhau về kích thước và công suất, còn lại đều thừa hưởng gần như
+							chất Marshall: &nbsp;sở hữu logo vàng nằm tự hào trên bề mặt, hệ
+							thống điều chỉnh volume, bass, treb cổ điển, bề ngoài đơn giản
+							nhưng tinh tế.</p>
+						<p style="text-align: center;">Marshall chuyên cung cấp loa
+							Marshall chính hãng.</p>
+						<div class="banner has-hover" id="banner-326793068">
+							<div class="banner-inner fill">
+								<div class="banner-bg fill">
+									<div class="bg fill bg-fill  bg-loaded"></div>
+								</div>
+								<div class="banner-layers container">
+									<div class="fill banner-link"></div>
+									<div id="text-box-718023035"
+										class="text-box banner-layer x5 md-x5 lg-x5 y80 md-y80 lg-y80 res-text">
+										<div class="text dark">
+											<div class="text-inner text-center">
+												<h3 class="uppercase">
+													<b>Loa marshall – BST home&nbsp;</b>
+												</h3>
+												<p>Trải nghiệm âm thanh chất lượng cao ngay tại căn
+													phòng của bạn.</p>
+												<p>&nbsp;</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div id="gap-1241732244" class="gap-element clearfix"
+							style="display: block; height: auto;"></div>
+
+						<h2 style="text-align: center;">Loa Marshall- Dùng điện trực
+							tiếp</h2>
+
+
+						<p style="text-align: center;">Bộ sưu tập sản phẩm loa
+							Marshall sử dụng điện trực tiếp đến từ hãng sản xuất Amp lừng
+							danh. Tập trung vào khách hàng gia đình, shop, tiệm cafe,… không
+							cần phải phải sử dụng loa di động.</p>
+						<p style="text-align: center;">Những dòng loa Marshall này ưu
+							điểm thiết kế đẹp, mang phong cách cổ điển và công suất rất lớn.</p>
+						<p style="text-align: center;">&nbsp;</p>
+
+						<div th:each="type: ${listType}">
+							<p th:text="${type.typeName}"></p>
+						</div>
+						<div
+							class="row large-columns-4 medium-columns-3 small-columns-2 row-small">
+							<div class="col" th:each="dien: ${dungdien}">
+								<div class="col-inner">
+
+									<div class="product-small box has-hover box-normal box-text-bottom">
+										<div class="box-image">
+											<div class="">
+												<a th:href="@{'/productDetail/'+${dien.proId}}"> 
+													<img class="product-image" th:src="@{|/productImage?proId=${dien.proId}|}" />
+												</a>
+											</div>
+											<div class="image-tools top right show-on-hover"></div>
+											<div
+												class="image-tools grid-tools text-center hide-for-small bottom hover-slide-in show-on-hover">
+											</div>
+										</div>
+
+										<div class="box-text text-center">
+											<div class="title-wrapper">
+												<p
+													class="name product-title woocommerce-loop-product__title">
+													<a th:text="${dien.proName}"
+														href=""
+														class="woocommerce-LoopProduct-link woocommerce-loop-product__link"></a>
+												</p>
+											</div>
+											<div class="price-wrapper">
+												<span class="price"> <ins>
+														<span class="woocommerce-Price-amount amount"> <span
+															th:text="${dien.price}"> <span
+																class="woocommerce-Price-currencySymbol"
+																th:text="${dien.unit}"></span>
+														</span>
+														</span>
+													</ins>
+												</span>
+											</div>
+											<a th:href="@{|/buyProduct?proId=${prodInfo.proId}|}"><button
+												 class="single_add_to_cart_button button alt">Thêm
+												vào giỏ hàng</button></a>
+										</div>
+										
+									</div>
+									
+								</div>
+								
+							</div>
+						</div>
+
+
+						<div class="banner has-hover" id="banner-1173770686">
+							<div class="banner-inner fill">
+								<div class="banner-bg fill">
+									<div class="bg fill bg-fill "></div>
+								</div>
+								<div class="banner-layers container">
+									<div class="fill banner-link"></div>
+									<div id="text-box-1121573895"
+										class="text-box banner-layer x95 md-x95 lg-x95 y50 md-y50 lg-y50 res-text">
+										<div class="text dark">
+											<div class="text-inner text-center">
+												<h3 class="uppercase">
+													<span style="font-size: 80%;"><b>&nbsp;ĐẲNG CẤP
+															LOA DI ĐỘNG</b></span>
+												</h3>
+												<p>THIÊT KẾ CỔ ĐIỂN CÙNG TÍNH NĂNG DI ĐỘNG THỜI THƯỢNG…</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div id="gap-1064679216" class="gap-element clearfix"
+							style="display: block; height: auto;"></div>
+						<h2 style="text-align: center;">Loa Marshall – Portable</h2>
+
+
+						<p style="text-align: center;">Các dòng loa Marshall di động
+							với thiết kế rất riêng. Đậm chất vintage với nhiều phiên bản khác
+							nhau.</p>
+						<p style="text-align: center;">Đem lại trải nghiệm vô cùng
+							chất với mỗi chuyến đi.</p>
+						<p style="text-align: center;">Dòng loa Marshall thiết kế tối
+							ưu và dùng pin nhằm phục vụ mục đích mang theo của các tín đồ âm
+							nhạc. Bao gồm các dòng: Stockwell, Kilburn, Tufton.</p>
+
+						<div
+							class="row large-columns-4 medium-columns-3 small-columns-2 row-small">
+							<div class="col" th:each="pin: ${dungpin}">
+								<div class="col-inner">
+									<div class="product-small box has-hover box-normal box-text-bottom">
+										<div class="box-image">
+											<div class="">
+												<a th:href="@{'/detailProduct/'+${pin.proId}}"> <img
+													width="300" height="300"
+													th:src="@{'/images/'+ ${pin.images}}"
+													data-src="https://marshallsaigon.com/wp-content/uploads/2020/01/marshall_actonII_voice_alexa_3-300x300.jpg"
+													class="show-on-hover absolute fill hide-for-small back-image lazy-load-active"
+													alt="marshall_actonII_voice_alexa" loading="lazy"
+													srcset="https://marshallsaigon.com/wp-content/uploads/2020/01/marshall_actonII_voice_alexa_3-300x300.jpg 300w, https://marshallsaigon.com/wp-content/uploads/2020/01/marshall_actonII_voice_alexa_3-400x400.jpg 400w, https://marshallsaigon.com/wp-content/uploads/2020/01/marshall_actonII_voice_alexa_3-280x280.jpg 280w, https://marshallsaigon.com/wp-content/uploads/2020/01/marshall_actonII_voice_alexa_3-768x768.jpg 768w, https://marshallsaigon.com/wp-content/uploads/2020/01/marshall_actonII_voice_alexa_3-600x600.jpg 600w, https://marshallsaigon.com/wp-content/uploads/2020/01/marshall_actonII_voice_alexa_3-100x100.jpg 100w, https://marshallsaigon.com/wp-content/uploads/2020/01/marshall_actonII_voice_alexa_3.jpg 774w"
+													data-srcset="https://marshallsaigon.com/wp-content/uploads/2020/01/marshall_actonII_voice_alexa_3-300x300.jpg 300w, https://marshallsaigon.com/wp-content/uploads/2020/01/marshall_actonII_voice_alexa_3-400x400.jpg 400w, https://marshallsaigon.com/wp-content/uploads/2020/01/marshall_actonII_voice_alexa_3-280x280.jpg 280w, https://marshallsaigon.com/wp-content/uploads/2020/01/marshall_actonII_voice_alexa_3-768x768.jpg 768w, https://marshallsaigon.com/wp-content/uploads/2020/01/marshall_actonII_voice_alexa_3-600x600.jpg 600w, https://marshallsaigon.com/wp-content/uploads/2020/01/marshall_actonII_voice_alexa_3-100x100.jpg 100w, https://marshallsaigon.com/wp-content/uploads/2020/01/marshall_actonII_voice_alexa_3.jpg 774w"
+													sizes="(max-width: 300px) 100vw, 300px"><img
+													width="300" height="300"
+													src="https://marshallsaigon.com/wp-content/uploads/2020/01/loa-marshall-acton-voice-alexa-hcm-300x300.jpg"
+													data-src="https://marshallsaigon.com/wp-content/uploads/2020/01/loa-marshall-acton-voice-alexa-hcm-300x300.jpg"
+													class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazy-load-active"
+													alt="loa-marshall-acton-voice-alexa-hcm" loading="lazy"
+													srcset="https://marshallsaigon.com/wp-content/uploads/2020/01/loa-marshall-acton-voice-alexa-hcm-300x300.jpg 300w, https://marshallsaigon.com/wp-content/uploads/2020/01/loa-marshall-acton-voice-alexa-hcm-400x400.jpg 400w, https://marshallsaigon.com/wp-content/uploads/2020/01/loa-marshall-acton-voice-alexa-hcm-800x800.jpg 800w, https://marshallsaigon.com/wp-content/uploads/2020/01/loa-marshall-acton-voice-alexa-hcm-280x280.jpg 280w, https://marshallsaigon.com/wp-content/uploads/2020/01/loa-marshall-acton-voice-alexa-hcm-768x768.jpg 768w, https://marshallsaigon.com/wp-content/uploads/2020/01/loa-marshall-acton-voice-alexa-hcm-1536x1536.jpg 1536w, https://marshallsaigon.com/wp-content/uploads/2020/01/loa-marshall-acton-voice-alexa-hcm-600x600.jpg 600w, https://marshallsaigon.com/wp-content/uploads/2020/01/loa-marshall-acton-voice-alexa-hcm-100x100.jpg 100w, https://marshallsaigon.com/wp-content/uploads/2020/01/loa-marshall-acton-voice-alexa-hcm.jpg 1920w"
+													data-srcset="https://marshallsaigon.com/wp-content/uploads/2020/01/loa-marshall-acton-voice-alexa-hcm-300x300.jpg 300w, https://marshallsaigon.com/wp-content/uploads/2020/01/loa-marshall-acton-voice-alexa-hcm-400x400.jpg 400w, https://marshallsaigon.com/wp-content/uploads/2020/01/loa-marshall-acton-voice-alexa-hcm-800x800.jpg 800w, https://marshallsaigon.com/wp-content/uploads/2020/01/loa-marshall-acton-voice-alexa-hcm-280x280.jpg 280w, https://marshallsaigon.com/wp-content/uploads/2020/01/loa-marshall-acton-voice-alexa-hcm-768x768.jpg 768w, https://marshallsaigon.com/wp-content/uploads/2020/01/loa-marshall-acton-voice-alexa-hcm-1536x1536.jpg 1536w, https://marshallsaigon.com/wp-content/uploads/2020/01/loa-marshall-acton-voice-alexa-hcm-600x600.jpg 600w, https://marshallsaigon.com/wp-content/uploads/2020/01/loa-marshall-acton-voice-alexa-hcm-100x100.jpg 100w, https://marshallsaigon.com/wp-content/uploads/2020/01/loa-marshall-acton-voice-alexa-hcm.jpg 1920w"
+													sizes="(max-width: 300px) 100vw, 300px">
+												</a>
+											</div>
+											<div class="image-tools top right show-on-hover"></div>
+											<div
+												class="image-tools grid-tools text-center hide-for-small bottom hover-slide-in show-on-hover">
+											</div>
+										</div>
+
+										<div class="box-text text-center">
+											<div class="title-wrapper">
+												<p
+													class="name product-title woocommerce-loop-product__title">
+													<a th:text="${pin.proName}"
+														href="../product/loa-marshall-acton-ii-voice-amazon-alexa/index.html"
+														class="woocommerce-LoopProduct-link woocommerce-loop-product__link"></a>
+												</p>
+											</div>
+											<div class="price-wrapper">
+												<span class="price"> <ins>
+														<span class="woocommerce-Price-amount amount"> <span
+															th:text="${pin.price}"> <span
+																class="woocommerce-Price-currencySymbol"
+																th:text="${pin.unit}"></span>
+														</span>
+														</span>
+													</ins>
+												</span>
+											</div>
+											<a th:href="@{|/buyProduct?proId=${prodInfo.proId}|}"><button
+												 class="single_add_to_cart_button button alt">Thêm
+												vào giỏ hàng</button></a>
+										</div>
+										
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+
+						<div class="text-center">
+							<div class="is-divider divider clearfix"
+								style="max-width: 800px;"></div>
+						</div>
+
+						<h2 style="text-align: center;">Trải nghiệm loa
+							Marshall&nbsp;</h2>
+						<p style="text-align: center;">Những đánh giá, review trải
+							nhiệm và nhiều thông tin cập nhật mới nhất về loa Marshall tại
+							thị trường Việt Nam.</p>
+						<div
+							class="row large-columns-3 medium-columns-1 small-columns-1 slider row-slider slider-nav-reveal slider-nav-push is-draggable flickity-enabled"
+							data-flickity-options="{&quot;imagesLoaded&quot;: true, &quot;groupCells&quot;: &quot;100%&quot;, &quot;dragThreshold&quot; : 5, &quot;cellAlign&quot;: &quot;left&quot;,&quot;wrapAround&quot;: true,&quot;prevNextButtons&quot;: true,&quot;percentPosition&quot;: true,&quot;pageDots&quot;: false, &quot;rightToLeft&quot;: false, &quot;autoPlay&quot; : false}"
+							tabindex="0">
+							<div class="flickity-viewport"
+								style="height: 376.297px; touch-action: pan-y;">
+								<div class="flickity-slider"
+									style="left: 0px; transform: translateX(-266.65%);">
+									<div class="col post-item is-selected"
+										style="position: absolute; left: 266.65%;">
+										<div class="col-inner">
+											<a
+												href="../marshall-emberton-them-2-mau-moi-cream-va-forest/index.html"
+												class="plain">
+												<div
+													class="box box-normal box-text-bottom box-blog-post has-hover">
+													<div class="box-image">
+														<div class="image-cover" style="padding-top: 56.25%;">
+															<img width="535" height="400"
+																src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20535%20400%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
+																data-src="https://marshallsaigon.com/wp-content/uploads/2021/04/Marshall-Emberton-cream-535x400.jpg"
+																class="lazy-load attachment-medium size-medium wp-post-image"
+																alt="Marshall-Emberton-cream-forest" loading="lazy"
+																srcset=""
+																data-srcset="https://marshallsaigon.com/wp-content/uploads/2021/04/Marshall-Emberton-cream-535x400.jpg 535w, https://marshallsaigon.com/wp-content/uploads/2021/04/Marshall-Emberton-cream-1070x800.jpg 1070w, https://marshallsaigon.com/wp-content/uploads/2021/04/Marshall-Emberton-cream-768x574.jpg 768w, https://marshallsaigon.com/wp-content/uploads/2021/04/Marshall-Emberton-cream-600x449.jpg 600w, https://marshallsaigon.com/wp-content/uploads/2021/04/Marshall-Emberton-cream.jpg 1459w"
+																sizes="(max-width: 535px) 100vw, 535px">
+														</div>
+													</div>
+													<div class="box-text text-center">
+														<div class="box-text-inner blog-post-inner">
+															<h5 class="post-title is-large ">Marshall Emberton
+																thêm 2 màu mới: Cream và Forest</h5>
+															<div class="is-divider"></div>
+															<p class="from_the_blog_excerpt ">Marshall Emberton
+																là dòng loa nhỏ nhất của Marshall với thiết kế cứng cáp
+																và [...]</p>
+															<p class="from_the_blog_comments uppercase is-xsmall">
+																2 Comments</p>
+														</div>
+													</div>
+													<div class="badge absolute top post-date badge-outline">
+														<div class="badge-inner">
+															<span class="post-date-day">09</span><br> <span
+																class="post-date-month is-xsmall">Th4</span>
+														</div>
+													</div>
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="col post-item is-selected"
+										style="position: absolute; left: 299.99%;">
+										<div class="col-inner">
+											<a
+												href="../marshall-mode-ii-tai-nghe-true-wireless-dau-tien-cua-hang/index.html"
+												class="plain">
+												<div
+													class="box box-normal box-text-bottom box-blog-post has-hover">
+													<div class="box-image">
+														<div class="image-cover" style="padding-top: 56.25%;">
+															<img width="600" height="400"
+																src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20600%20400%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
+																data-src="https://marshallsaigon.com/wp-content/uploads/2021/03/tai-nghe-true-wireless-marshall-mode-ii-2-6-600x400.jpg"
+																class="lazy-load attachment-medium size-medium wp-post-image"
+																alt="tai-nghe-true-wireless-marshall-mode-ii-2"
+																loading="lazy" srcset=""
+																data-srcset="https://marshallsaigon.com/wp-content/uploads/2021/03/tai-nghe-true-wireless-marshall-mode-ii-2-6-600x400.jpg 600w, https://marshallsaigon.com/wp-content/uploads/2021/03/tai-nghe-true-wireless-marshall-mode-ii-2-6-1200x800.jpg 1200w, https://marshallsaigon.com/wp-content/uploads/2021/03/tai-nghe-true-wireless-marshall-mode-ii-2-6-768x512.jpg 768w, https://marshallsaigon.com/wp-content/uploads/2021/03/tai-nghe-true-wireless-marshall-mode-ii-2-6-1536x1024.jpg 1536w, https://marshallsaigon.com/wp-content/uploads/2021/03/tai-nghe-true-wireless-marshall-mode-ii-2-6.jpg 1600w"
+																sizes="(max-width: 600px) 100vw, 600px">
+														</div>
+													</div>
+													<div class="box-text text-center">
+														<div class="box-text-inner blog-post-inner">
+															<h5 class="post-title is-large ">Marshall Mode II-
+																tai nghe true wireless đầu tiên của hãng</h5>
+															<div class="is-divider"></div>
+															<p class="from_the_blog_excerpt ">Marshall sau khi ra
+																mắt tai nghe Monitor A.N.C dòng tai nghe chống ồn chủ
+																[...]</p>
+														</div>
+													</div>
+													<div class="badge absolute top post-date badge-outline">
+														<div class="badge-inner">
+															<span class="post-date-day">05</span><br> <span
+																class="post-date-month is-xsmall">Th3</span>
+														</div>
+													</div>
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="col post-item is-selected"
+										style="position: absolute; left: 333.32%;">
+										<div class="col-inner">
+											<a
+												href="../chuong-trinh-uu-dai-thang-11-khi-mua-marshall-chinh-hang/index.html"
+												class="plain">
+												<div
+													class="box box-normal box-text-bottom box-blog-post has-hover">
+													<div class="box-image">
+														<div class="image-cover" style="padding-top: 56.25%;">
+															<img width="711" height="400"
+																src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20711%20400%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
+																data-src="https://marshallsaigon.com/wp-content/uploads/2020/10/Khuyen-mai-loa-marshall-chinh-hang-711x400.jpg"
+																class="lazy-load attachment-medium size-medium wp-post-image"
+																alt="Khuyen-mai-loa-marshall-chinh-hang" loading="lazy"
+																srcset=""
+																data-srcset="https://marshallsaigon.com/wp-content/uploads/2020/10/Khuyen-mai-loa-marshall-chinh-hang-711x400.jpg 711w, https://marshallsaigon.com/wp-content/uploads/2020/10/Khuyen-mai-loa-marshall-chinh-hang-1400x788.jpg 1400w, https://marshallsaigon.com/wp-content/uploads/2020/10/Khuyen-mai-loa-marshall-chinh-hang-768x432.jpg 768w, https://marshallsaigon.com/wp-content/uploads/2020/10/Khuyen-mai-loa-marshall-chinh-hang-1536x864.jpg 1536w, https://marshallsaigon.com/wp-content/uploads/2020/10/Khuyen-mai-loa-marshall-chinh-hang-600x338.jpg 600w, https://marshallsaigon.com/wp-content/uploads/2020/10/Khuyen-mai-loa-marshall-chinh-hang.jpg 1920w"
+																sizes="(max-width: 711px) 100vw, 711px">
+														</div>
+													</div>
+													<div class="box-text text-center">
+														<div class="box-text-inner blog-post-inner">
+															<h5 class="post-title is-large ">Chương trình ưu đãi
+																tháng 11 khi mua Marshall chính hãng</h5>
+															<div class="is-divider"></div>
+															<p class="from_the_blog_excerpt ">CHƯƠNG TRÌNH KHUYẾN
+																MÃI CHỈ DIỄN RA TỪ 20.11 – 25.11.2020 Giao hàng miễn phí
+																[...]</p>
+														</div>
+													</div>
+													<div class="badge absolute top post-date badge-outline">
+														<div class="badge-inner">
+															<span class="post-date-day">23</span><br> <span
+																class="post-date-month is-xsmall">Th11</span>
+														</div>
+													</div>
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="col post-item" aria-hidden="true"
+										style="position: absolute; left: 366.65%;">
+										<div class="col-inner">
+											<a href="../marshall-custom-vintage-uk-flag/index.html"
+												class="plain">
+												<div
+													class="box box-normal box-text-bottom box-blog-post has-hover">
+													<div class="box-image">
+														<div class="image-cover" style="padding-top: 56.25%;">
+															<img width="573" height="400"
+																src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20573%20400%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
+																data-src="https://marshallsaigon.com/wp-content/uploads/2020/11/Marshall-Acton2-UK-Flag-3-573x400.jpg"
+																class="lazy-load attachment-medium size-medium wp-post-image"
+																alt="Marshall-Acton2-UK-Flag-3" loading="lazy" srcset=""
+																data-srcset="https://marshallsaigon.com/wp-content/uploads/2020/11/Marshall-Acton2-UK-Flag-3-573x400.jpg 573w, https://marshallsaigon.com/wp-content/uploads/2020/11/Marshall-Acton2-UK-Flag-3-1146x800.jpg 1146w, https://marshallsaigon.com/wp-content/uploads/2020/11/Marshall-Acton2-UK-Flag-3-768x536.jpg 768w, https://marshallsaigon.com/wp-content/uploads/2020/11/Marshall-Acton2-UK-Flag-3-600x419.jpg 600w, https://marshallsaigon.com/wp-content/uploads/2020/11/Marshall-Acton2-UK-Flag-3.jpg 1190w"
+																sizes="(max-width: 573px) 100vw, 573px">
+														</div>
+													</div>
+													<div class="box-text text-center">
+														<div class="box-text-inner blog-post-inner">
+															<h5 class="post-title is-large ">Marshall Custom
+																Vintage UK Flag</h5>
+															<div class="is-divider"></div>
+															<p class="from_the_blog_excerpt ">Cuối năm 2018,
+																Marshall đã cho ra đời những chiếc loa thế hệ 2, trong
+																[...]</p>
+														</div>
+													</div>
+													<div class="badge absolute top post-date badge-outline">
+														<div class="badge-inner">
+															<span class="post-date-day">20</span><br> <span
+																class="post-date-month is-xsmall">Th11</span>
+														</div>
+													</div>
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="col post-item" aria-hidden="true"
+										style="position: absolute; left: 133.33%;">
+										<div class="col-inner">
+											<a
+												href="../trai-nghiem-marshall-major-iv-dau-tien-tai-viet-nam/index.html"
+												class="plain">
+												<div
+													class="box box-normal box-text-bottom box-blog-post has-hover">
+													<div class="box-image">
+														<div class="image-cover" style="padding-top: 56.25%;">
+															<img width="600" height="400"
+																src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20600%20400%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
+																data-src="https://marshallsaigon.com/wp-content/uploads/2020/10/MARSHALL-Major-iv-4-dau-tien-viet-nam-600x400.jpg"
+																class="lazy-load attachment-medium size-medium wp-post-image"
+																alt="MARSHALL-Major-iv-4" loading="lazy" srcset=""
+																data-srcset="https://marshallsaigon.com/wp-content/uploads/2020/10/MARSHALL-Major-iv-4-dau-tien-viet-nam-600x400.jpg 600w, https://marshallsaigon.com/wp-content/uploads/2020/10/MARSHALL-Major-iv-4-dau-tien-viet-nam-1201x800.jpg 1201w, https://marshallsaigon.com/wp-content/uploads/2020/10/MARSHALL-Major-iv-4-dau-tien-viet-nam-768x512.jpg 768w, https://marshallsaigon.com/wp-content/uploads/2020/10/MARSHALL-Major-iv-4-dau-tien-viet-nam-1536x1023.jpg 1536w, https://marshallsaigon.com/wp-content/uploads/2020/10/MARSHALL-Major-iv-4-dau-tien-viet-nam.jpg 1920w"
+																sizes="(max-width: 600px) 100vw, 600px">
+														</div>
+													</div>
+													<div class="box-text text-center">
+														<div class="box-text-inner blog-post-inner">
+
+
+															<h5 class="post-title is-large ">Trải nghiệm
+																Marshall Major IV đầu tiên tại Việt Nam</h5>
+															<div class="is-divider"></div>
+															<p class="from_the_blog_excerpt ">Xin chào các bạn,
+																rất may mắn District M đã nhận được bản Major thế [...]</p>
+														</div>
+													</div>
+													<div class="badge absolute top post-date badge-outline">
+														<div class="badge-inner">
+															<span class="post-date-day">24</span><br> <span
+																class="post-date-month is-xsmall">Th10</span>
+														</div>
+													</div>
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="col post-item" aria-hidden="true"
+										style="position: absolute; left: 166.66%;">
+										<div class="col-inner">
+											<a href="../marshall-kilburn-street-chekered/index.html"
+												class="plain">
+												<div
+													class="box box-normal box-text-bottom box-blog-post has-hover">
+													<div class="box-image">
+														<div class="image-cover" style="padding-top: 56.25%;">
+															<img width="600" height="400"
+																src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20600%20400%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
+																data-src="https://marshallsaigon.com/wp-content/uploads/2020/10/MARSHALL-KILBURN-STREET-CHEKERED-by-District-M-5-600x400.jpg"
+																class="lazy-load attachment-medium size-medium wp-post-image"
+																alt="MARSHALL KILBURN STREET CHEKERED Custom"
+																loading="lazy" srcset=""
+																data-srcset="https://marshallsaigon.com/wp-content/uploads/2020/10/MARSHALL-KILBURN-STREET-CHEKERED-by-District-M-5-600x400.jpg 600w, https://marshallsaigon.com/wp-content/uploads/2020/10/MARSHALL-KILBURN-STREET-CHEKERED-by-District-M-5-1200x800.jpg 1200w, https://marshallsaigon.com/wp-content/uploads/2020/10/MARSHALL-KILBURN-STREET-CHEKERED-by-District-M-5-768x512.jpg 768w, https://marshallsaigon.com/wp-content/uploads/2020/10/MARSHALL-KILBURN-STREET-CHEKERED-by-District-M-5-1536x1024.jpg 1536w, https://marshallsaigon.com/wp-content/uploads/2020/10/MARSHALL-KILBURN-STREET-CHEKERED-by-District-M-5.jpg 1920w"
+																sizes="(max-width: 600px) 100vw, 600px">
+														</div>
+													</div>
+													<div class="box-text text-center">
+														<div class="box-text-inner blog-post-inner">
+															<h5 class="post-title is-large ">Marshall Kilburn
+																STREET CHEKERED</h5>
+															<div class="is-divider"></div>
+															<p class="from_the_blog_excerpt ">Một dự án đến từ
+																District M, phiên bản độc đáo này mang đến cho [...]</p>
+														</div>
+													</div>
+													<div class="badge absolute top post-date badge-outline">
+														<div class="badge-inner">
+															<span class="post-date-day">23</span><br> <span
+																class="post-date-month is-xsmall">Th10</span>
+														</div>
+													</div>
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="col post-item" aria-hidden="true"
+										style="position: absolute; left: 199.99%;">
+										<div class="col-inner">
+											<a
+												href="../tren-tay-marshall-emberton-black-brass/index.html"
+												class="plain">
+												<div
+													class="box box-normal box-text-bottom box-blog-post has-hover">
+													<div class="box-image">
+														<div class="image-cover" style="padding-top: 56.25%;">
+															<img width="711" height="400"
+																src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20711%20400%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
+																data-src="https://marshallsaigon.com/wp-content/uploads/2020/10/tren-tay-Marshall-emberton-black-n-brass-711x400.jpg"
+																class="lazy-load attachment-medium size-medium wp-post-image"
+																alt="tren-tay-Marshall-emberton-black-n-brass"
+																loading="lazy" srcset=""
+																data-srcset="https://marshallsaigon.com/wp-content/uploads/2020/10/tren-tay-Marshall-emberton-black-n-brass-711x400.jpg 711w, https://marshallsaigon.com/wp-content/uploads/2020/10/tren-tay-Marshall-emberton-black-n-brass-1400x788.jpg 1400w, https://marshallsaigon.com/wp-content/uploads/2020/10/tren-tay-Marshall-emberton-black-n-brass-768x432.jpg 768w, https://marshallsaigon.com/wp-content/uploads/2020/10/tren-tay-Marshall-emberton-black-n-brass-1536x864.jpg 1536w, https://marshallsaigon.com/wp-content/uploads/2020/10/tren-tay-Marshall-emberton-black-n-brass-600x338.jpg 600w, https://marshallsaigon.com/wp-content/uploads/2020/10/tren-tay-Marshall-emberton-black-n-brass.jpg 1600w"
+																sizes="(max-width: 711px) 100vw, 711px">
+														</div>
+													</div>
+													<div class="box-text text-center">
+														<div class="box-text-inner blog-post-inner">
+															<h5 class="post-title is-large ">Trên tay Marshall
+																Emberton Black &amp; Brass</h5>
+															<div class="is-divider"></div>
+															<p class="from_the_blog_excerpt ">Sau khi ra mắt
+																Marshall Emberton – Black rất thành công, Marshall đã
+																tiếp tục [...]</p>
+														</div>
+													</div>
+													<div class="badge absolute top post-date badge-outline">
+														<div class="badge-inner">
+															<span class="post-date-day">19</span><br> <span
+																class="post-date-month is-xsmall">Th10</span>
+														</div>
+													</div>
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="col post-item" aria-hidden="true"
+										style="position: absolute; left: 233.32%;">
+										<div class="col-inner">
+											<a
+												href="../marshall-gioi-thieu-major-iv-80h-choi-nhac-sac-khong-day/index.html"
+												class="plain">
+												<div
+													class="box box-normal box-text-bottom box-blog-post has-hover">
+													<div class="box-image">
+														<div class="image-cover" style="padding-top: 56.25%;">
+															<img width="711" height="400"
+																src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20711%20400%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
+																data-src="https://marshallsaigon.com/wp-content/uploads/2020/10/marshall_major-IV-711x400.jpg"
+																class="lazy-load attachment-medium size-medium wp-post-image"
+																alt="marshall_major-IV" loading="lazy" srcset=""
+																data-srcset="https://marshallsaigon.com/wp-content/uploads/2020/10/marshall_major-IV-711x400.jpg 711w, https://marshallsaigon.com/wp-content/uploads/2020/10/marshall_major-IV-1400x788.jpg 1400w, https://marshallsaigon.com/wp-content/uploads/2020/10/marshall_major-IV-768x432.jpg 768w, https://marshallsaigon.com/wp-content/uploads/2020/10/marshall_major-IV-1536x864.jpg 1536w, https://marshallsaigon.com/wp-content/uploads/2020/10/marshall_major-IV-600x338.jpg 600w, https://marshallsaigon.com/wp-content/uploads/2020/10/marshall_major-IV.jpg 1600w"
+																sizes="(max-width: 711px) 100vw, 711px">
+														</div>
+													</div>
+													<div class="box-text text-center">
+														<div class="box-text-inner blog-post-inner">
+															<h5 class="post-title is-large ">Marshall giới thiệu
+																Major IV- 80h chơi nhạc, sạc không dây</h5>
+															<div class="is-divider"></div>
+															<p class="from_the_blog_excerpt ">Marshall đã công bố
+																tai nghe Bluetooth Major IV mới, đi kèm với việc nâng
+																[...]</p>
+														</div>
+													</div>
+													<div class="badge absolute top post-date badge-outline">
+														<div class="badge-inner">
+															<span class="post-date-day">01</span><br> <span
+																class="post-date-month is-xsmall">Th10</span>
+														</div>
+													</div>
+												</div>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<button
+								class="flickity-button flickity-prev-next-button previous"
+								type="button" aria-label="Previous">
+								<svg class="flickity-button-icon" viewBox="0 0 100 100">
+									<path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z"
+										class="arrow"></path></svg>
+							</button>
+							<button class="flickity-button flickity-prev-next-button next"
+								type="button" aria-label="Next">
+								<svg class="flickity-button-icon" viewBox="0 0 100 100">
+									<path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z"
+										class="arrow" transform="translate(100, 100) rotate(180) "></path></svg>
+							</button>
+						</div>
+						<div class="row" id="row-1191820571">
+							<div id="col-70791575" class="col medium-4 small-12 large-4">
+								<div class="col-inner">
+									<div
+										class="icon-box testimonial-box icon-box-center text-center">
+										<div class="icon-box-img testimonial-image circle"
+											style="width: 121px">
+											<img width="280" height="280"
+												src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20280%20280%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
+												data-src="https://marshallsaigon.com/wp-content/uploads/2019/11/danh-gia-loa-marshall-3-280x280.jpg"
+												class="lazy-load attachment-thumbnail size-thumbnail"
+												alt="loa-marshall" loading="lazy" srcset=""
+												data-srcset="https://marshallsaigon.com/wp-content/uploads/2019/11/danh-gia-loa-marshall-3-280x280.jpg 280w, https://marshallsaigon.com/wp-content/uploads/2019/11/danh-gia-loa-marshall-3-300x300.jpg 300w, https://marshallsaigon.com/wp-content/uploads/2019/11/danh-gia-loa-marshall-3-100x100.jpg 100w"
+												sizes="(max-width: 280px) 100vw, 280px">
+										</div>
+										<div class="icon-box-text p-last-0">
+											<div class="star-rating">
+												<span style="width: 100%"><strong class="rating"></strong></span>
+											</div>
+											<div
+												class="testimonial-text line-height-small italic test_text first-reset last-reset is-italic">
+												<p>Âm nhạc giúp mình hưng phấn mỗi ngày. Loa Marshall
+													không chỉ là thiết bị âm thanh mà còn là nhiều câu chuyện
+													gắn liền với Rock.</p>
+											</div>
+											<div class="testimonial-meta pt-half">
+												<strong class="testimonial-name test_name">Võ Thế
+													Hùng</strong> <span class="testimonial-company test_company"></span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div id="col-798464382" class="col medium-4 small-12 large-4">
+								<div class="col-inner">
+									<div
+										class="icon-box testimonial-box icon-box-center text-center">
+										<div class="icon-box-img testimonial-image circle"
+											style="width: 121px">
+											<img width="280" height="280"
+												src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20280%20280%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
+												data-src="https://marshallsaigon.com/wp-content/uploads/2019/12/Feedbak-kh-mua-loa-marshall-1-1-280x280.jpg"
+												class="lazy-load attachment-thumbnail size-thumbnail"
+												alt="review-mashall-major-II" loading="lazy" srcset=""
+												data-srcset="https://marshallsaigon.com/wp-content/uploads/2019/12/Feedbak-kh-mua-loa-marshall-1-1-280x280.jpg 280w, https://marshallsaigon.com/wp-content/uploads/2019/12/Feedbak-kh-mua-loa-marshall-1-1-300x300.jpg 300w, https://marshallsaigon.com/wp-content/uploads/2019/12/Feedbak-kh-mua-loa-marshall-1-1-100x100.jpg 100w"
+												sizes="(max-width: 280px) 100vw, 280px">
+										</div>
+										<div class="icon-box-text p-last-0">
+											<div class="star-rating">
+												<span style="width: 100%"><strong class="rating"></strong></span>
+											</div>
+											<div
+												class="testimonial-text line-height-small italic test_text first-reset last-reset is-italic">
+												<div class="e-box h-p2 -stacked -radius-none">
+													<p class="t-body h-my1">
+														Âm trường là một thế mạnh của Major II khi âm thanh vang
+														hiện rõ, khiến người nghe dường như không cảm nhận được
+														giới hạn của không gian. Marshall Major II là một tai nghe
+														thiên về bass, mid và khá yếu ở dải âm cao (treble), vì
+														thế đây sẽ là tai nghe dành cho các “tín đồ âm trầm”, hoặc
+														những ai thích nhạc pop vốn chuộng dải mid tốt để thưởng
+														thức trọn vẹn chất giọng ca sĩ<img class="lazy-load emoji"
+															role="img" draggable="false"
+															src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
+															data-src="https://s.w.org/images/core/emoji/12.0.0-1/svg/1f44f-1f3fb.svg"
+															alt="👏🏻">
+													</p>
+												</div>
+											</div>
+											<div class="testimonial-meta pt-half">
+												<strong class="testimonial-name test_name">Tracy
+													Nguyen</strong> <span class="testimonial-company test_company"></span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div id="col-851815519" class="col medium-4 small-12 large-4">
+								<div class="col-inner">
+									<div
+										class="icon-box testimonial-box icon-box-center text-center">
+										<div class="icon-box-img testimonial-image circle"
+											style="width: 121px">
+											<img width="280" height="280"
+												src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20280%20280%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
+												data-src="https://marshallsaigon.com/wp-content/uploads/2019/12/danh-gia-loa-marshall-stanmore-2-76-280x280.jpg"
+												class="lazy-load attachment-thumbnail size-thumbnail"
+												alt="danh-gia-loa-marshall-stanmore-2" loading="lazy"
+												srcset=""
+												data-srcset="https://marshallsaigon.com/wp-content/uploads/2019/12/danh-gia-loa-marshall-stanmore-2-76-280x280.jpg 280w, https://marshallsaigon.com/wp-content/uploads/2019/12/danh-gia-loa-marshall-stanmore-2-76-300x300.jpg 300w, https://marshallsaigon.com/wp-content/uploads/2019/12/danh-gia-loa-marshall-stanmore-2-76-100x100.jpg 100w"
+												sizes="(max-width: 280px) 100vw, 280px">
+										</div>
+										<div class="icon-box-text p-last-0">
+											<div class="star-rating">
+												<span style="width: 100%"><strong class="rating"></strong></span>
+											</div>
+											<div
+												class="testimonial-text line-height-small italic test_text first-reset last-reset is-italic">
+												<p>Đẹp – Cổ điển – Chất âm tuyệt vời</p>
+												<p>Nếu nhiều bạn đang tìm thiết bị âm thanh để Decor đẹp
+													mà chất âm hay thì loa Marshall Stanmore II là một ý tưởng
+													không tồi nha!</p>
+											</div>
+											<div class="testimonial-meta pt-half">
+												<strong class="testimonial-name test_name">Ngoc
+													Nguyen</strong> <span class="testimonial-company test_company"></span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</main>
+
+
+	<main id="main" class="">
+		<div class="checkout-page-title page-title">
+			<div class="page-title-inner flex-row medium-flex-wrap container">
+				<div class="flex-col flex-grow medium-text-center">
+					<nav
+						class="breadcrumbs flex-row flex-row-center heading-font checkout-breadcrumbs text-center strong h2 uppercase">
+						<a th:href="@{/shoppingCart}" class="current">Shopping Cart</a> <span
+							class="divider hide-for-small"><i class="icon-angle-right"></i></span>
+						<a th:href="@{/shoppingCartCustomer}" class="hide-for-small">Checkout
+							details</a> <span class="divider hide-for-small"><i
+							class="icon-angle-right"></i></span> <a href="#"
+							class="no-click hide-for-small">Order Complete</a>
+					</nav>
+				</div>
+			</div>
+		</div>
+		<div class="cart-container container page-wrapper page-checkout">
+			<div class="woocommerce">
+				<div class="text-center pt pb">
+					<div class="woocommerce-notices-wrapper"></div>
+
+					<th:block
+						th:if="${cartForm == null || cartForm.cartLines == null || cartForm.cartLines.empty}">
+						<h2>Chưa có sản phẩm</h2>
+						<a th:href="@{/index}">Về trang chủ</a>
+						<a th:href="@{/productList}">Thêm sản phẩm</a>
+					</th:block>
+
+					<th:block
+						th:if="${cartForm != null && cartForm.cartLines != null && !cartForm.cartLines.empty}">
+						<form method="POST" th:object="${cartForm}"
+							th:action="@{/shoppingCart}">
+
+							<div class="product-preview-container"
+								th:each="cartLineInfo, varStatus : ${cartForm.cartLines}">
+								<ul>
+									<li><img class="product-image"
+										th:src="@{|/productImage?proId=${cartLineInfo.productInfo.proId}|}" />
+									</li>
+									<li>Mã: <span th:utext="${cartLineInfo.productInfo.proId}"></span>
+										<input type="hidden"
+										th:name="|cartLines[${varStatus.index}].productInfo.proId|"
+										th:value="${cartLineInfo.productInfo.proId}" />
+									</li>
+									<li>Tên: <span
+										th:utext="${cartLineInfo.productInfo.proName}"></span></li>
+									<li>Giá: <span class="price"
+										th:utext="${#numbers.formatDecimal(cartLineInfo.productInfo.price,3,2,'COMMA')}">
+									</span>
+									</li>
+									<li>Số lượng: <input
+										th:name="|cartLines[${varStatus.index}].quantity|"
+										th:value="${cartLineInfo.quantity}" />
+									</li>
+									<li>Tổng: <span class="subtotal"
+										th:utext="${#numbers.formatDecimal(cartLineInfo.amount,3,2,'COMMA')}">
+									</span>
+									</li>
+									<li><a
+										th:href="@{|/shoppingCartRemoveProduct?proId=${cartLineInfo.productInfo.proId}|}">Xóa</a>
+									</li>
+								</ul>
+							</div>
+
+							<div style="clear: both"></div>
+							<input class="button-update-sc" type="submit"
+								value="Update Quantity" /> <a class="navi-item"
+								th:href="@{/shoppingCartCustomer}">Nhập thông tin người mua</a>
+
+							<a th:href="@{/productList}">Thêm sản phẩm</a>
+							<p class="return-to-shop">
+								<a class="button primary wc-backward" th:href="@{/index}">Quay
+									trở lại cửa hàng</a>
+							</p>
+						</form>
+					</th:block>
+				</div>
+			</div>
+		</div>
+	</main>
+	<th:block th:include="footer"></th:block>
+</body>
+</html>

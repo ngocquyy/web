@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org">
+
+<head>
+<link rel="stylesheet" type="text/css" href="/style.css" />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel='stylesheet' id='mbwph-style-css'
+	href='../../wp-content/plugins/wp-helper-lite/public/partials/assets/css/mbwph-style24b2.css?ver=5.5.5'
+	type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-css'
+	href='../../wp-includes/css/dist/block-library/style.min24b2.css?ver=5.5.5'
+	type='text/css' media='all' />
+<link rel='stylesheet' id='wc-block-vendors-style-css'
+	href='../../wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/vendors-stylee100.css?ver=4.7.2'
+	type='text/css' media='all' />
+<link rel='stylesheet' id='wc-block-style-css'
+	href='../../wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/stylee100.css?ver=4.7.2'
+	type='text/css' media='all' />
+<link rel='stylesheet' id='flatsome-icons-css'
+	href='../../wp-content/themes/flatsome/assets/css/fl-iconsae34.css?ver=3.12'
+	type='text/css' media='all' />
+<link rel='stylesheet' id='flatsome-main-css'
+	href='../../wp-content/themes/flatsome/assets/css/flatsome2916.css?ver=3.13.1'
+	type='text/css' media='all' />
+<link rel='stylesheet' id='flatsome-shop-css'
+	href='../../wp-content/themes/flatsome/assets/css/flatsome-shop2916.css?ver=3.13.1'
+	type='text/css' media='all' />
+<link rel='stylesheet' id='flatsome-style-css'
+	href='../../wp-content/themes/flatsome-child/style6aec.css?ver=3.0'
+	type='text/css' media='all' />
+<link rel='stylesheet' id='dashicons-css'
+	href='../../wp-includes/css/dashicons.min24b2.css?ver=5.5.5'
+	type='text/css' media='all' />
+<link rel='stylesheet' id='flatsome-googlefonts-css'
+	href='http://fonts.googleapis.com/css?family=Montserrat%3Aregular%2Cdefault%2Cdefault%2C400%7CDancing+Script%3Aregular%2C400&amp;display=swap&amp;ver=3.9'
+	type='text/css' media='all' />
+<link rel="https://api.w.org/" href="wp-json/index.html" />
+<link rel="alternate" type="application/json"
+	href="../../wp-json/wp/v2/pages/61.json" />
+<link rel="EditURI" type="application/rsd+xml" title="RSD"
+	href="xmlrpc0db0.html?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml"
+	href="../../wp-includes/wlwmanifest.xml" />
+<link rel='shortlink' href='index.html' />
+<link rel="alternate" type="application/json+oembed"
+	href="../../wp-json/oembed/1.0/embedc187.json?url=https%3A%2F%2Fmarshallsaigon.com%2F" />
+<link rel="alternate" type="text/xml+oembed"
+	href="../../wp-json/oembed/1.0/embed3b9e?url=https%3A%2F%2Fmarshallsaigon.com%2F&amp;format=xml" />
+<link rel="icon"
+	href="../../wp-content/uploads/2020/08/cropped-Logo-Marshall-1-2-32x32.png"
+	sizes="32x32" />
+<link rel="icon"
+	href="../../static/wp-content/uploads/2020/08/cropped-Logo-Marshall-1-2-192x192.png"
+	sizes="192x192" />
+<link rel="apple-touch-icon"
+	href="../../wp-content/uploads/2020/08/cropped-Logo-Marshall-1-2-180x180.png" />
+<meta charset="UTF-8">
+<title>Marshall</title>
+</head>
+
+<body>
+	<th:block th:include="header"></th:block>
+
+	<main id="main" class="">
+		<div id="content" class="content-area page-wrapper" role="main">
+			<div class="row row-main">
+				<div class="large-12 col">
+					<div class="col-inner">
+						<div th:each="pro: ${detailPro}">
+
+							<div class="product-main">
+								<div class="row content-row mb-0">
+									<div class="product-gallery large-6 col">
+										<div class="row row-small">
+											<div class="col large-10">
+												<div class="woocommerce-product-gallery__image slide">
+													<a href=""> <img th:src="@{'/images/product/'+ ${pro.image}}" />
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div
+										class="product-info summary col-fit col entry-summary product-summary text-center form-flat">
+
+										<h1 th:text="${pro.proName}"
+											class="product-title product_title entry-title"></h1>
+										<div class="is-divider small"></div>
+										<div class="price-wrapper">
+											<p class="price product-page-price price-on-sale">
+												<span class="woocommerce-Price-amount amount"> <span
+													th:text="${#numbers.formatDecimal(pro.price,0,'COMMA',0,'POINT')+ pro.unit}"></span>
+												</span>
+											</p>
+										</div>
+										<div class="product-short-description">
+											<p>&nbsp;</p>
+											<p th:text="${pro.descriptions}"></p>
+											<p>&nbsp;</p>
+										</div>
+										<p th:text="${pro.status?'Còn hàng':'Hết hàng'}"
+											style="color: #7a9c59;"></p>
+										<form class="variations_form cart" action="" method="post"
+											enctype='multipart/form-data' data-product_id="556"
+											data-product_variations="[{&quot;attributes&quot;:{&quot;attribute_pa_mau-sac&quot;:&quot;black&quot;},&quot;availability_html&quot;:&quot;&lt;p class=\&quot;stock out-of-stock\&quot;&gt;H\u1ebft h\u00e0ng&lt;\/p&gt;\n&quot;,&quot;backorders_allowed&quot;:false,&quot;dimensions&quot;:{&quot;length&quot;:&quot;&quot;,&quot;width&quot;:&quot;&quot;,&quot;height&quot;:&quot;&quot;},&quot;dimensions_html&quot;:&quot;N\/A&quot;,&quot;display_price&quot;:6990000,&quot;display_regular_price&quot;:6990000,&quot;image&quot;:{&quot;title&quot;:&quot;loa-marshall-acton-2-81&quot;,&quot;caption&quot;:&quot;&quot;,&quot;url&quot;:&quot;https:\/\/marshallsaigon.com\/wp-content\/uploads\/2019\/11\/loa-marshall-acton-2-81.jpg&quot;,&quot;alt&quot;:&quot;marshall-acton-2&quot;,&quot;src&quot;:&quot;https:\/\/marshallsaigon.com\/wp-content\/uploads\/2019\/11\/loa-marshall-acton-2-81-600x600.jpg&quot;,&quot;srcset&quot;:&quot;https:\/\/marshallsaigon.com\/wp-content\/uploads\/2019\/11\/loa-marshall-acton-2-81-600x600.jpg 600w, https:\/\/marshallsaigon.com\/wp-content\/uploads\/2019\/11\/loa-marshall-acton-2-81-400x400.jpg 400w, https:\/\/marshallsaigon.com\/wp-content\/uploads\/2019\/11\/loa-marshall-acton-2-81-800x800.jpg 800w, https:\/\/marshallsaigon.com\/wp-content\/uploads\/2019\/11\/loa-marshall-acton-2-81-280x280.jpg 280w, https:\/\/marshallsaigon.com\/wp-content\/uploads\/2019\/11\/loa-marshall-acton-2-81-768x768.jpg 768w, https:\/\/marshallsaigon.com\/wp-content\/uploads\/2019\/11\/loa-marshall-acton-2-81-1536x1536.jpg 1536w, https:\/\/marshallsaigon.com\/wp-content\/uploads\/2019\/11\/loa-marshall-acton-2-81-300x300.jpg 300w, https:\/\/marshallsaigon.com\/wp-content\/uploads\/2019\/11\/loa-marshall-acton-2-81-100x100.jpg 100w, https:\/\/marshallsaigon.com\/wp-content\/uploads\/2019\/11\/loa-marshall-acton-2-81.jpg 1600w&quot;,&quot;sizes&quot;:&quot;(max-width: 600px) 100vw, 600px&quot;,&quot;full_src&quot;:&quot;https:\/\/marshallsaigon.com\/wp-content\/uploads\/2019\/11\/loa-marshall-acton-2-81.jpg&quot;,&quot;full_src_w&quot;:1600,&quot;full_src_h&quot;:1600,&quot;gallery_thumbnail_src&quot;:&quot;https:\/\/marshallsaigon.com\/wp-content\/uploads\/2019\/11\/loa-marshall-acton-2-81-100x100.jpg&quot;,&quot;gallery_thumbnail_src_w&quot;:100,&quot;gallery_thumbnail_src_h&quot;:100,&quot;thumb_src&quot;:&quot;https:\/\/marshallsaigon.com\/wp-content\/uploads\/2019\/11\/loa-marshall-acton-2-81-300x300.jpg&quot;,&quot;thumb_src_w&quot;:300,&quot;thumb_src_h&quot;:300,&quot;src_w&quot;:600,&quot;src_h&quot;:600},&quot;image_id&quot;:2404,&quot;is_downloadable&quot;:false,&quot;is_in_stock&quot;:false,&quot;is_purchasable&quot;:true,&quot;is_sold_individually&quot;:&quot;no&quot;,&quot;is_virtual&quot;:false,&quot;max_qty&quot;:&quot;&quot;,&quot;min_qty&quot;:1,&quot;price_html&quot;:&quot;&lt;span class=\&quot;price\&quot;&gt;&lt;span class=\&quot;woocommerce-Price-amount amount\&quot;&gt;&lt;bdi&gt;&lt;span class=\&quot;woocommerce-Price-currencySymbol\&quot;&gt;&amp;#8363;&lt;\/span&gt;6,990,000&lt;\/bdi&gt;&lt;\/span&gt;&lt;\/span&gt;&quot;,&quot;sku&quot;:&quot;5346455355254H&quot;,&quot;variation_description&quot;:&quot;&quot;,&quot;variation_id&quot;:3054,&quot;variation_is_active&quot;:true,&quot;variation_is_visible&quot;:true,&quot;weight&quot;:&quot;&quot;,&quot;weight_html&quot;:&quot;N\/A&quot;},{&quot;attributes&quot;:{&quot;attribute_pa_mau-sac&quot;:&quot;white&quot;},&quot;availability_html&quot;:&quot;&lt;p class=\&quot;stock out-of-stock\&quot;&gt;H\u1ebft h\u00e0ng&lt;\/p&gt;\n&quot;,&quot;backorders_allowed&quot;:false,&quot;dimensions&quot;:{&quot;length&quot;:&quot;&quot;,&quot;width&quot;:&quot;&quot;,&quot;height&quot;:&quot;&quot;},&quot;dimensions_html&quot;:&quot;N\/A&quot;,&quot;display_price&quot;:6990000,&quot;display_regular_price&quot;:6990000,&quot;image&quot;:{&quot;title&quot;:&quot;pos-marshall-acton-ii-bt-white&quot;,&quot;caption&quot;:&quot;&quot;,&quot;url&quot;:&quot;https:\/\/marshallsaigon.com\/wp-content\/uploads\/2021\/01\/pos-marshall-acton-ii-bt-white.jpg&quot;,&quot;alt&quot;:&quot;marshall-acton-ii-bt-white&quot;,&quot;src&quot;:&quot;https:\/\/marshallsaigon.com\/wp-content\/uploads\/2021\/01\/pos-marshall-acton-ii-bt-white-600x600.jpg&quot;,&quot;srcset&quot;:&quot;https:\/\/marshallsaigon.com\/wp-content\/uploads\/2021\/01\/pos-marshall-acton-ii-bt-white-600x600.jpg 600w, https:\/\/marshallsaigon.com\/wp-content\/uploads\/2021\/01\/pos-marshall-acton-ii-bt-white-400x400.jpg 400w, https:\/\/marshallsaigon.com\/wp-content\/uploads\/2021\/01\/pos-marshall-acton-ii-bt-white-801x800.jpg 801w, https:\/\/marshallsaigon.com\/wp-content\/uploads\/2021\/01\/pos-marshall-acton-ii-bt-white-280x280.jpg 280w, https:\/\/marshallsaigon.com\/wp-content\/uploads\/2021\/01\/pos-marshall-acton-ii-bt-white-768x768.jpg 768w, https:\/\/marshallsaigon.com\/wp-content\/uploads\/2021\/01\/pos-marshall-acton-ii-bt-white-1536x1536.jpg 1536w, https:\/\/marshallsaigon.com\/wp-content\/uploads\/2021\/01\/pos-marshall-acton-ii-bt-white-300x300.jpg 300w, https:\/\/marshallsaigon.com\/wp-content\/uploads\/2021\/01\/pos-marshall-acton-ii-bt-white-100x100.jpg 100w, https:\/\/marshallsaigon.com\/wp-content\/uploads\/2021\/01\/pos-marshall-acton-ii-bt-white.jpg 1600w&quot;,&quot;sizes&quot;:&quot;(max-width: 600px) 100vw, 600px&quot;,&quot;full_src&quot;:&quot;https:\/\/marshallsaigon.com\/wp-content\/uploads\/2021\/01\/pos-marshall-acton-ii-bt-white.jpg&quot;,&quot;full_src_w&quot;:1600,&quot;full_src_h&quot;:1599,&quot;gallery_thumbnail_src&quot;:&quot;https:\/\/marshallsaigon.com\/wp-content\/uploads\/2021\/01\/pos-marshall-acton-ii-bt-white-100x100.jpg&quot;,&quot;gallery_thumbnail_src_w&quot;:100,&quot;gallery_thumbnail_src_h&quot;:100,&quot;thumb_src&quot;:&quot;https:\/\/marshallsaigon.com\/wp-content\/uploads\/2021\/01\/pos-marshall-acton-ii-bt-white-300x300.jpg&quot;,&quot;thumb_src_w&quot;:300,&quot;thumb_src_h&quot;:300,&quot;src_w&quot;:600,&quot;src_h&quot;:600},&quot;image_id&quot;:3056,&quot;is_downloadable&quot;:false,&quot;is_in_stock&quot;:false,&quot;is_purchasable&quot;:true,&quot;is_sold_individually&quot;:&quot;no&quot;,&quot;is_virtual&quot;:false,&quot;max_qty&quot;:&quot;&quot;,&quot;min_qty&quot;:1,&quot;price_html&quot;:&quot;&lt;span class=\&quot;price\&quot;&gt;&lt;span class=\&quot;woocommerce-Price-amount amount\&quot;&gt;&lt;bdi&gt;&lt;span class=\&quot;woocommerce-Price-currencySymbol\&quot;&gt;&amp;#8363;&lt;\/span&gt;6,990,000&lt;\/bdi&gt;&lt;\/span&gt;&lt;\/span&gt;&quot;,&quot;sku&quot;:&quot;7340055355278H&quot;,&quot;variation_description&quot;:&quot;&quot;,&quot;variation_id&quot;:3055,&quot;variation_is_active&quot;:true,&quot;variation_is_visible&quot;:true,&quot;weight&quot;:&quot;&quot;,&quot;weight_html&quot;:&quot;N\/A&quot;},{&quot;attributes&quot;:{&quot;attribute_pa_mau-sac&quot;:&quot;acton-ii-voice&quot;},&quot;availability_html&quot;:&quot;&lt;p class=\&quot;stock in-stock\&quot;&gt;C\u00f2n h\u00e0ng&lt;\/p&gt;\n&quot;,&quot;backorders_allowed&quot;:false,&quot;dimensions&quot;:{&quot;length&quot;:&quot;&quot;,&quot;width&quot;:&quot;&quot;,&quot;height&quot;:&quot;&quot;},&quot;dimensions_html&quot;:&quot;N\/A&quot;,&quot;display_price&quot;:7490000,&quot;display_regular_price&quot;:8490000,&quot;image&quot;:{&quot;title&quot;:&quot;loa-marshall-acton-voice-alexa&quot;,&quot;caption&quot;:&quot;&quot;,&quot;url&quot;:&quot;https:\/\/marshallsaigon.com\/wp-content\/uploads\/2020\/01\/loa-marshall-acton-voice-alexa.jpg&quot;,&quot;alt&quot;:&quot;loa-marshall-acton-voice-alexa&quot;,&quot;src&quot;:&quot;https:\/\/marshallsaigon.com\/wp-content\/uploads\/2020\/01\/loa-marshall-acton-voice-alexa-600x600.jpg&quot;,&quot;srcset&quot;:&quot;https:\/\/marshallsaigon.com\/wp-content\/uploads\/2020\/01\/loa-marshall-acton-voice-alexa-600x600.jpg 600w, https:\/\/marshallsaigon.com\/wp-content\/uploads\/2020\/01\/loa-marshall-acton-voice-alexa-400x400.jpg 400w, https:\/\/marshallsaigon.com\/wp-content\/uploads\/2020\/01\/loa-marshall-acton-voice-alexa-800x800.jpg 800w, https:\/\/marshallsaigon.com\/wp-content\/uploads\/2020\/01\/loa-marshall-acton-voice-alexa-280x280.jpg 280w, https:\/\/marshallsaigon.com\/wp-content\/uploads\/2020\/01\/loa-marshall-acton-voice-alexa-768x768.jpg 768w, https:\/\/marshallsaigon.com\/wp-content\/uploads\/2020\/01\/loa-marshall-acton-voice-alexa-1536x1536.jpg 1536w, https:\/\/marshallsaigon.com\/wp-content\/uploads\/2020\/01\/loa-marshall-acton-voice-alexa-300x300.jpg 300w, https:\/\/marshallsaigon.com\/wp-content\/uploads\/2020\/01\/loa-marshall-acton-voice-alexa-100x100.jpg 100w, https:\/\/marshallsaigon.com\/wp-content\/uploads\/2020\/01\/loa-marshall-acton-voice-alexa.jpg 1920w&quot;,&quot;sizes&quot;:&quot;(max-width: 600px) 100vw, 600px&quot;,&quot;full_src&quot;:&quot;https:\/\/marshallsaigon.com\/wp-content\/uploads\/2020\/01\/loa-marshall-acton-voice-alexa.jpg&quot;,&quot;full_src_w&quot;:1920,&quot;full_src_h&quot;:1920,&quot;gallery_thumbnail_src&quot;:&quot;https:\/\/marshallsaigon.com\/wp-content\/uploads\/2020\/01\/loa-marshall-acton-voice-alexa-100x100.jpg&quot;,&quot;gallery_thumbnail_src_w&quot;:100,&quot;gallery_thumbnail_src_h&quot;:100,&quot;thumb_src&quot;:&quot;https:\/\/marshallsaigon.com\/wp-content\/uploads\/2020\/01\/loa-marshall-acton-voice-alexa-300x300.jpg&quot;,&quot;thumb_src_w&quot;:300,&quot;thumb_src_h&quot;:300,&quot;src_w&quot;:600,&quot;src_h&quot;:600},&quot;image_id&quot;:990,&quot;is_downloadable&quot;:false,&quot;is_in_stock&quot;:true,&quot;is_purchasable&quot;:true,&quot;is_sold_individually&quot;:&quot;no&quot;,&quot;is_virtual&quot;:false,&quot;max_qty&quot;:50,&quot;min_qty&quot;:1,&quot;price_html&quot;:&quot;&lt;span class=\&quot;price\&quot;&gt;&lt;del&gt;&lt;span class=\&quot;woocommerce-Price-amount amount\&quot;&gt;&lt;bdi&gt;&lt;span class=\&quot;woocommerce-Price-currencySymbol\&quot;&gt;&amp;#8363;&lt;\/span&gt;8,490,000&lt;\/bdi&gt;&lt;\/span&gt;&lt;\/del&gt; &lt;ins&gt;&lt;span class=\&quot;woocommerce-Price-amount amount\&quot;&gt;&lt;bdi&gt;&lt;span class=\&quot;woocommerce-Price-currencySymbol\&quot;&gt;&amp;#8363;&lt;\/span&gt;7,490,000&lt;\/bdi&gt;&lt;\/span&gt;&lt;\/ins&gt;&lt;\/span&gt;&quot;,&quot;sku&quot;:&quot;&quot;,&quot;variation_description&quot;:&quot;&quot;,&quot;variation_id&quot;:3228,&quot;variation_is_active&quot;:true,&quot;variation_is_visible&quot;:true,&quot;weight&quot;:&quot;&quot;,&quot;weight_html&quot;:&quot;N\/A&quot;}]">
+
+											<div class="single_variation_wrap">
+												<div class="woocommerce-variation single_variation"></div>
+												<div
+													class="woocommerce-variation-add-to-cart variations_button">
+
+													<div class="quantity buttons_added form-flat">
+														<input type="button" value="-"
+															class="minus button is-form"> <label
+															class="screen-reader-text" for="quantity_60cc72158aaf9">Marshall
+															Acton 2 số lượng</label> <input type="number"
+															id="quantity_60cc72158aaf9" class="input-text qty text"
+															step="1" min="1" max="" name="quantity" value="1"
+															title="SL" size="4" placeholder="" inputmode="numeric" />
+														<input type="button" value="+" class="plus button is-form">
+													</div>
+													<th:block th:if="${pro.status == false}">
+														<a th:href="@{|/cart/add/${pro.proId}|}" class="no-click">
+														<button type="button" 
+															class="single_add_to_cart_button button alt">
+															Thêm vào giỏ hàng</button>
+													</a>
+													</th:block>
+													<th:block th:if="${pro.status == true}">
+														<a th:href="@{|/cart/add/${pro.proId}|}" >
+														<button type="button"
+															class="single_add_to_cart_button button alt">
+															Thêm vào giỏ hàng</button>
+													</a>
+													</th:block>
+												</div>
+											</div>
+										</form>
+
+										<div class="product_meta">
+
+											<span class="sku_wrapper">Mã: <span
+												th:text="${pro.proId}"></span>
+											</span> <span class="posted_in">Hạng mục: <a
+												th:text="${pro.productType.typeName}" href="" rel="tag"></a>
+											</span> <span class="tagged_as">Từ khóa: <a href="" rel="tag">Loa
+													bluetooth</a>, <a href="" rel="tag">Marshall</a>, <a href=""
+												rel="tag">Marshall Acton</a>
+											</span>
+										</div>
+										<div class="social-icons share-icons share-row relative">
+											<a
+												href="whatsapp://send?text=Marshall%20Acton%202 - https://marshallsaigon.com/product/loa-marshall-acton-2/"
+												data-action="share/whatsapp/share"
+												class="icon button round is-outline tooltip whatsapp show-for-medium"
+												title="Share on WhatsApp"><i class="icon-whatsapp"></i></a><a
+												href="http://www.facebook.com/sharer.php?u=https://marshallsaigon.com/product/loa-marshall-acton-2/"
+												data-label="Facebook"
+												onclick="window.open(this.href,this.title,'width=500,height=500,top=300px,left=300px');  return false;"
+												rel="noopener noreferrer nofollow" target="_blank"
+												class="icon button round is-outline tooltip facebook"
+												title="Share on Facebook"><i class="icon-facebook"></i></a><a
+												href="mailto:enteryour@addresshere.com?subject=Marshall%20Acton%202&amp;body=Check%20this%20out:%20https://marshallsaigon.com/product/loa-marshall-acton-2/"
+												rel="nofollow"
+												class="icon button round is-outline tooltip email"
+												title="Email to a Friend"><i class="icon-envelop"></i></a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="product-footer">
+								<div class="container">
+
+									<div
+										class="woocommerce-tabs wc-tabs-wrapper container tabbed-content">
+										<ul
+											class="tabs wc-tabs product-tabs small-nav-collapse nav nav-uppercase nav-line nav-center"
+											role="tablist">
+											<li class="description_tab active" id="tab-title-description"
+												role="tab" aria-controls="tab-description"><a
+												href="#tab-description"> Mô tả </a></li>
+
+											<li class="reviews_tab " id="tab-title-reviews" role="tab"
+												aria-controls="tab-reviews"><a href="#tab-reviews">
+													Đánh giá (0) </a></li>
+										</ul>
+										<div class="tab-panels">
+											<div th:text="${pro.detail}"
+												class="woocommerce-Tabs-panel woocommerce-Tabs-panel--description panel entry-content active"
+												id="tab-description" role="tabpanel"
+												aria-labelledby="tab-title-description">
+
+												<div id="gap-1471751833" class="gap-element clearfix"
+													style="display: block; height: auto;"></div>
+
+											</div>
+
+											<div
+												class="woocommerce-Tabs-panel woocommerce-Tabs-panel--reviews panel entry-content "
+												id="tab-reviews" role="tabpanel"
+												aria-labelledby="tab-title-reviews">
+												<div id="reviews" class="woocommerce-Reviews row">
+													<div id="comments" class="col large-12">
+														<h3 class="woocommerce-Reviews-title normal">Đánh giá</h3>
+
+														<p class="woocommerce-noreviews">Chưa có đánh giá nào.</p>
+													</div>
+
+													<div id="review_form_wrapper" class="large-12 col">
+														<div id="review_form" class="col-inner">
+															<div class="review-form-inner has-border">
+																<div id="respond" class="comment-respond">
+																	<h3 id="reply-title" class="comment-reply-title">
+																		Hãy là người đầu tiên nhận xét <small><a
+																			rel="nofollow" id="cancel-comment-reply-link"
+																			href="index.html#respond" style="display: none;">Hủy</a></small>
+																	</h3>
+																	<form
+																		action="https://marshallsaigon.com/wp-comments-post.php"
+																		method="post" id="commentform" class="comment-form"
+																		novalidate>
+																		<div class="comment-form-rating">
+																			<label for="rating">Đánh giá của bạn&nbsp;<span
+																				class="required">*</span></label><select name="rating"
+																				id="rating" required>
+																				<option value="">Xếp hạng&hellip;</option>
+																				<option value="5">Rất tốt</option>
+																				<option value="4">Tốt</option>
+																				<option value="3">Trung bình</option>
+																				<option value="2">Không tệ</option>
+																				<option value="1">Rất tệ</option>
+																			</select>
+																		</div>
+																		<p class="comment-form-comment">
+																			<label for="comment">Nhận xét của bạn&nbsp;<span
+																				class="required">*</span></label>
+																			<textarea id="comment" name="comment" cols="45"
+																				rows="8" required></textarea>
+																		</p>
+																		<p class="comment-form-author">
+																			<label for="author">Tên&nbsp;<span
+																				class="required">*</span></label><input id="author"
+																				name="author" type="text" value="" size="30"
+																				required />
+																		</p>
+																		<p class="comment-form-email">
+																			<label for="email">Email&nbsp;<span
+																				class="required">*</span></label><input id="email"
+																				name="email" type="email" value="" size="30"
+																				required />
+																		</p>
+																		<p class="comment-form-cookies-consent">
+																			<input id="wp-comment-cookies-consent"
+																				name="wp-comment-cookies-consent" type="checkbox"
+																				value="yes" /> <label
+																				for="wp-comment-cookies-consent">Lưu tên của
+																				tôi, email, và trang web trong trình duyệt này cho
+																				lần bình luận kế tiếp của tôi.</label>
+																		</p>
+																		<p class="form-submit">
+																			<input name="submit" type="submit" id="submit"
+																				class="submit" value="Gửi đi" /> <input
+																				type='hidden' name='comment_post_ID' value='556'
+																				id='comment_post_ID' /> <input type='hidden'
+																				name='comment_parent' id='comment_parent' value='0' />
+																		</p>
+																	</form>
+																</div>
+
+															</div>
+														</div>
+													</div>
+
+
+												</div>
+											</div>
+
+										</div>
+									</div>
+								</div>
+
+								<div class="related related-products-wrapper product-section">
+
+									<h3
+										class="product-section-title container-width product-section-title-related pt-half pb-half uppercase">
+										Sản phẩm tương tự</h3>
+
+
+
+
+									<div
+										class="row large-columns-3 medium-columns-3 small-columns-2 row-small slider row-slider slider-nav-reveal slider-nav-push"
+										data-flickity-options='{"imagesLoaded": true, "groupCells": "100%", "dragThreshold" : 5, "cellAlign": "left","wrapAround": true,"prevNextButtons": true,"percentPosition": true,"pageDots": false, "rightToLeft": false, "autoPlay" : false}'>
+
+
+
+
+										<div th:each="p: ${similar}"
+											class="product-small col has-hover out-of-stock product type-product post-867 status-publish outofstock product_cat-speaker product_tag-marshall product_tag-marshall-acton has-post-thumbnail shipping-taxable purchasable product-type-simple">
+											<div class="col-inner">
+
+												<div class="badge-container absolute left top z-1"></div>
+												<div class="product-small box ">
+													<div class="box-image">
+														<div class="image-fade_in_back">
+															<a th:href="@{|/product/productDetail/${p.proId}|}">
+																<img th:src="@{'/images/product/'+ ${p.image}}" />
+															</a>
+														</div>
+														<div class="image-tools is-small top right show-on-hover">
+														</div>
+														<div
+															class="image-tools is-small hide-for-small bottom left show-on-hover">
+														</div>
+														<div
+															class="image-tools grid-tools text-center hide-for-small bottom hover-slide-in show-on-hover">
+															<a class="quick-view" data-prod="867" href="#quick-view">Quick
+																View</a>
+														</div>
+
+													</div>
+
+													<div class="box-text box-text-products">
+														<div class="title-wrapper">
+															<p
+																class="name product-title woocommerce-loop-product__title">
+																<a href=""
+																	class="woocommerce-LoopProduct-link woocommerce-loop-product__link"
+																	th:text="${p.proName}"></a>
+															</p>
+														</div>
+														<div class="price-wrapper">
+															<span class="price"> <span
+																class="woocommerce-Price-amount amount"> <span
+																	th:text="${#numbers.formatDecimal(p.price,0,'COMMA',0,'POINT')+ p.unit}"></span>
+															</span>
+															</span>
+
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+
+
+	<th:block th:include="footer">
+
+	</th:block>
+</body>
+</html>
