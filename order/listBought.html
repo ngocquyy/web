@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org">
+<head>
+<link rel="stylesheet" type="text/css" href="/style.css" />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel='stylesheet' id='mbwph-style-css'
+	href='../../wp-content/plugins/wp-helper-lite/public/partials/assets/css/mbwph-style24b2.css?ver=5.5.5'
+	type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-css'
+	href='../../wp-includes/css/dist/block-library/style.min24b2.css?ver=5.5.5'
+	type='text/css' media='all' />
+<link rel='stylesheet' id='wc-block-vendors-style-css'
+	href='../../wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/vendors-stylee100.css?ver=4.7.2'
+	type='text/css' media='all' />
+<link rel='stylesheet' id='wc-block-style-css'
+	href='../../wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/stylee100.css?ver=4.7.2'
+	type='text/css' media='all' />
+<link rel='stylesheet' id='flatsome-icons-css'
+	href='../../wp-content/themes/flatsome/assets/css/fl-iconsae34.css?ver=3.12'
+	type='text/css' media='all' />
+<link rel='stylesheet' id='flatsome-main-css'
+	href='../../wp-content/themes/flatsome/assets/css/flatsome2916.css?ver=3.13.1'
+	type='text/css' media='all' />
+<link rel='stylesheet' id='flatsome-shop-css'
+	href='../../wp-content/themes/flatsome/assets/css/flatsome-shop2916.css?ver=3.13.1'
+	type='text/css' media='all' />
+<link rel='stylesheet' id='flatsome-style-css'
+	href='../../wp-content/themes/flatsome-child/style6aec.css?ver=3.0'
+	type='text/css' media='all' />
+<link rel='stylesheet' id='dashicons-css'
+	href='../../wp-includes/css/dashicons.min24b2.css?ver=5.5.5'
+	type='text/css' media='all' />
+<link rel='stylesheet' id='flatsome-googlefonts-css'
+	href='http://fonts.googleapis.com/css?family=Montserrat%3Aregular%2Cdefault%2Cdefault%2C400%7CDancing+Script%3Aregular%2C400&amp;display=swap&amp;ver=3.9'
+	type='text/css' media='all' />
+<link rel="https://api.w.org/" href="wp-json/index.html" />
+<link rel="alternate" type="application/json"
+	href="../../wp-json/wp/v2/pages/61.json" />
+<link rel="EditURI" type="application/rsd+xml" title="RSD"
+	href="xmlrpc0db0.html?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml"
+	href="../../wp-includes/wlwmanifest.xml" />
+<link rel='shortlink' href='index.html' />
+<link rel="alternate" type="application/json+oembed"
+	href="../../wp-json/oembed/1.0/embedc187.json?url=https%3A%2F%2Fmarshallsaigon.com%2F" />
+<link rel="alternate" type="text/xml+oembed"
+	href="../../wp-json/oembed/1.0/embed3b9e?url=https%3A%2F%2Fmarshallsaigon.com%2F&amp;format=xml" />
+<link rel="icon"
+	href="../../wp-content/uploads/2020/08/cropped-Logo-Marshall-1-2-32x32.png"
+	sizes="32x32" />
+<link rel="icon"
+	href="../../static/wp-content/uploads/2020/08/cropped-Logo-Marshall-1-2-192x192.png"
+	sizes="192x192" />
+<link rel="apple-touch-icon"
+	href="../../wp-content/uploads/2020/08/cropped-Logo-Marshall-1-2-180x180.png" />
+<meta charset="UTF-8">
+<title>Marshall</title>
+</head>
+<body>
+	<th:block th:include="header"></th:block>
+	<main id="main" class="">
+		<div id="content" class="content-area page-wrapper" role="main">
+
+			<div class="row row-main">
+				<div class="large-12 col">
+					<div class="col-inner">
+						<div
+							class="row large-columns-4 medium-columns-3 small-columns-2 row-small">
+
+
+							<th:block th:if="${listBought.size == 0}">
+								<h2>Bạn chưa mua sản phẩm nào</h2>
+							</th:block>
+
+							<th:block th:if="${listBought.size != 0}">
+								<div class="col" th:each="pro: ${listBought}">
+
+									<div class="col-inner">
+
+										<div
+											class="product-small box has-hover box-normal box-text-bottom">
+											<div class="box-image">
+												<div class="">
+													<a th:href="@{|/product/productDetail/${pro.proId}|}">
+														<img class="product-image"
+														th:src="@{'/images/product/'+ ${pro.image}}" />
+													</a>
+												</div>
+												<div class="image-tools top right show-on-hover"></div>
+												<div
+													class="image-tools grid-tools text-center hide-for-small bottom hover-slide-in show-on-hover">
+												</div>
+												<div
+													class="image-tools grid-tools text-center hide-for-small bottom hover-slide-in show-on-hover">
+													<a class="quick-view quick-view-added" data-prod="844"
+														th:href="@{|/cart/add/${pro.proId}|}">Thêm vào giỏ
+														hàng</a>
+												</div>
+											</div>
+
+											<div class="box-text text-center">
+												<div class="title-wrapper">
+													<p
+														class="name product-title woocommerce-loop-product__title">
+														<a th:text="${pro.proName}"
+															th:href="@{|/product/productDetail/${pro.proId}|}"
+															class="woocommerce-LoopProduct-link woocommerce-loop-product__link"></a>
+													</p>
+												</div>
+												<div class="price-wrapper">
+													<span class="price"> <ins>
+															<span class="woocommerce-Price-amount amount"> <span
+																th:text="${#numbers.formatDecimal(pro.price,0,'COMMA',0,'POINT')+ pro.unit}"></span>
+															</span>
+														</ins>
+													</span>
+												</div>
+
+											</div>
+
+										</div>
+
+									</div>
+								</div>
+							</th:block>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<th:block th:include="footer"></th:block>
+</body>
+</html>

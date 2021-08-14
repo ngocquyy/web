@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <meta charset="UTF-8">
+      <title>Shopping Cart Confirmation</title>
+      <link rel="stylesheet" type="text/css" th:href="@{/styles.css}">
+   </head>
+   <body>
+      <th:block th:include="/header"></th:block>
+     
+     
+     
+     
+     
+     <main id="main" class="">
+		<div class="checkout-page-title page-title">
+			<div class="page-title-inner flex-row medium-flex-wrap container">
+	  			<div class="flex-col flex-grow medium-text-center">
+	 	 			<nav class="breadcrumbs flex-row flex-row-center heading-font checkout-breadcrumbs text-center strong h2 uppercase">
+  	   					<a th:href="@{/shoppingCart}" class="hide-for-small" >Shopping Cart</a>
+  	   					<span class="divider hide-for-small"><i class="icon-angle-right"></i></span>
+  	  				 	<a href="../checkout/index.html" class="current" >Checkout details</a>
+  	   					<span class="divider hide-for-small"><i class="icon-angle-right"></i></span>
+  	   					<a href="#" class="no-click hide-for-small">Order Complete</a>
+		 			</nav>
+	  			</div>
+			</div>
+		</div>
+		<div class="cart-container container page-wrapper page-checkout">
+			<div class="woocommerce">
+				<div class="text-center pt pb">
+					
+					<div class="woocommerce-notices-wrapper"></div>
+					<div class="page-title">
+      					<h1>Xác nhận đơn hàng</h1>
+      				</div>
+					
+					<div class="customer-info-container">
+         				<h3>Thông tin người mua:</h3>
+         				<ul>
+            				<li>Tên: <span th:utext="${myCart.customerInfo.name}"></span></li>
+            				<li>Email: <span th:utext="${myCart.customerInfo.email}"></span></li>
+            				<li>Số điện thoại: <span th:utext="${myCart.customerInfo.phone}"></span></li>
+            				<li>Địa chỉ: <span th:utext="${myCart.customerInfo.address}"></span></li>
+         				</ul>
+         				<h3>Tóm tắt đơn hàng:</h3>
+         				<ul>
+            				<li>Số lượng sản phẩm: <span th:utext="${myCart.quantityTotal}"></span></li>
+            				<li>Tổng tiền: <span class="total"
+                  							th:utext="${#numbers.formatDecimal(myCart.amountTotal,3,2,'COMMA')}">  
+               							</span>
+            				</li>
+         				</ul>
+      				</div>
+      				
+       				<form method="POST" th:action="@{/shoppingCartConfirmation}">
+         				<a class="navi-item" th:href="@{/shoppingCart}">Sửa giỏ hàng</a>
+         				
+         				<a class="navi-item" th:href="@{/shoppingCartCustomer}">Sửa thông tin người mua</a>
+         				
+         				<input type="submit" value="Thanh toán" class="button-send-sc" />
+      				</form>
+      				
+       				<div class="container">
+         				<div class="product-preview-container" th:each="cartLineInfo : ${myCart.cartLines}">
+            				<ul>
+               					<li>
+                  					<img class="product-image" th:src="@{|/productImage?proId=${cartLineInfo.productInfo.proId}|}" />
+               					</li>
+               					<li> Mã: <span th:utext="${cartLineInfo.productInfo.proId}"></span>
+                  					<input type="hidden" name="proId" th:value="${cartLineInfo.productInfo.proId}" />
+               					</li>
+               					<li>Tên sản phẩm: <span th:utext="${cartLineInfo.productInfo.proName}"></span></li>
+               					<li>Giá: <span class="price"
+                     							th:utext="${#numbers.formatDecimal(cartLineInfo.productInfo.price,3,2,'COMMA')}">
+                  							</span>
+               					</li>
+               					<li>Số lượng: <span th:utext="${cartLineInfo.quantity}"></span></li>
+               					<li>Tổng tiền: <span class="subtotal"
+                     								th:utext="${#numbers.formatDecimal(cartLineInfo.amount,3,2,'COMMA')}">
+                  							  </span>
+               					</li>
+            				</ul>
+         				</div>
+      				</div>
+      				
+				</div>
+			</div>
+		</div>
+	</main>
+	
+      <th:block th:include="/footer"></th:block>
+       
+   </body>
+</html>

@@ -1,0 +1,144 @@
+<html xmlns:th="http://www.thymeLeaf.org">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Quan ly</title>
+<!-- Tell the browser to be responsive to screen width -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet"
+	href="../../plugins/fontawesome-free/css/all.min.css">
+<!-- Ionicons -->
+<link rel="stylesheet"
+	href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+<!-- Tempusdominus Bbootstrap 4 -->
+<link rel="stylesheet"
+	href="../../plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+<!-- iCheck -->
+<link rel="stylesheet"
+	href="../../plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+<!-- JQVMap -->
+<link rel="stylesheet" href="../../plugins/jqvmap/jqvmap.min.css">
+<!-- Theme style -->
+<link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+<!-- overlayScrollbars -->
+<link rel="stylesheet"
+	href="../../plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+<!-- Daterange picker -->
+<link rel="stylesheet"
+	href="../../plugins/daterangepicker/daterangepicker.css">
+<!-- summernote -->
+<link rel="stylesheet"
+	href="../../plugins/summernote/summernote-bs4.css">
+<!-- Google Font: Source Sans Pro -->
+<link
+	href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700"
+	rel="stylesheet">
+</head>
+<body>
+	<th:block th:include="admin/management"></th:block>
+
+	<div class="content-wrapper">
+		<!-- Content Header (Page header) -->
+
+		<section class="content-header">
+			<div class="container-fluid">
+				<div class="row mb-2">
+					<div class="col-sm-6">
+						<h1>Sản phẩm</h1>
+					</div>
+					<div class="col-sm-6">
+						<ol class="breadcrumb float-sm-right">
+							<li class="breadcrumb-item"><a href="#">Home</a></li>
+							<li class="breadcrumb-item active">Sản phẩm</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+			<!-- /.container-fluid -->
+		</section>
+
+		<!-- Main content -->
+		<section class="content">
+
+			<!-- Default box -->
+			<div class="card">
+				<div class="card-header">
+					<a class="btn btn-outline-success" th:href="@{/admin/addPro}">Thêm
+						sản phẩm</a>
+
+					<div class="card-tools">
+						<button type="button" class="btn btn-tool"
+							data-card-widget="collapse" data-toggle="tooltip"
+							title="Collapse">
+							<i class="fas fa-minus"></i>
+						</button>
+						<button type="button" class="btn btn-tool"
+							data-card-widget="remove" data-toggle="tooltip" title="Remove">
+							<i class="fas fa-times"></i>
+						</button>
+					</div>
+				</div>
+				<div class="card-body p-0">
+
+					<th:block th:if="${listPro.size() == 0}">
+						<h2>Chưa có sản phẩm</h2>
+					</th:block>
+
+					<th:block th:if="${listPro.size() != 0}">
+
+						<div class="container">
+							<div class="row ">
+								<div th:each="pro: ${listPro}" class="col-lg-4 ">
+									<div class="container">
+										<div class="card" style="width: auto;">
+											<img class="card-img-top"
+												th:src="@{'/images/product/'+ ${pro.image}}" alt="Card image"
+												style="width: 100%">
+											<div class="card-body">
+												<h4 th:text="${pro.proName}" class="card-title"></h4>
+												
+												<p
+													th:text="${#numbers.formatDecimal(pro.price,0,'COMMA',0,'POINT')+ pro.unit}"
+													class="card-text"></p>
+													
+												<p class="card-text"> Khuyến mại: 
+													<span th:text="${pro.discount}"></span>
+												</p>
+
+												<a class="btn btn-outline-secondary"
+													th:href="@{/admin/editPro/(proId=${pro.proId})}"> <i
+													class="fas fa-pencil-alt"> </i> Sửa
+												</a> <a class="btn btn-outline-danger"
+													onclick="return confirm('Sure?')"
+													th:href="@{/admin/deletePro/(proId=${pro.proId})}"> <i
+													class="fas fa-eraser"> </i> Xóa
+												</a>
+											</div>
+										</div>
+										<br>
+									</div>
+								</div>
+							</div>
+							<th:block th:each="page: ${listPages}">
+								<a th:href="@{|/admin/listPro?page=${page}| }" th:text="${page}"></a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+							</th:block>
+
+
+							
+
+						</div>
+					</th:block>
+
+
+				</div>
+				<!-- /.card-body -->
+
+			</div>
+			<!-- /.card -->
+
+		</section>
+		<!-- /.content -->
+	</div>
+</body>
+</html>

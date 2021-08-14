@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<title>Đơn hàng chi tiết</title>
+<link rel="stylesheet" type="text/css" href="../../styles.css">
+
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel='stylesheet' id='mbwph-style-css'
+	href='../../wp-content/plugins/wp-helper-lite/public/partials/assets/css/mbwph-style24b2.css?ver=5.5.5'
+	type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-css'
+	href='../../wp-includes/css/dist/block-library/style.min24b2.css?ver=5.5.5'
+	type='text/css' media='all' />
+<link rel='stylesheet' id='wc-block-vendors-style-css'
+	href='../../wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/vendors-stylee100.css?ver=4.7.2'
+	type='text/css' media='all' />
+<link rel='stylesheet' id='wc-block-style-css'
+	href='../../wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/stylee100.css?ver=4.7.2'
+	type='text/css' media='all' />
+<link rel='stylesheet' id='flatsome-icons-css'
+	href='../../wp-content/themes/flatsome/assets/css/fl-iconsae34.css?ver=3.12'
+	type='text/css' media='all' />
+<link rel='stylesheet' id='flatsome-main-css'
+	href='../../wp-content/themes/flatsome/assets/css/flatsome2916.css?ver=3.13.1'
+	type='text/css' media='all' />
+<link rel='stylesheet' id='flatsome-shop-css'
+	href='../../wp-content/themes/flatsome/assets/css/flatsome-shop2916.css?ver=3.13.1'
+	type='text/css' media='all' />
+<link rel='stylesheet' id='flatsome-style-css'
+	href='../../wp-content/themes/flatsome-child/style6aec.css?ver=3.0'
+	type='text/css' media='all' />
+<link rel='stylesheet' id='dashicons-css'
+	href='../../wp-includes/css/dashicons.min24b2.css?ver=5.5.5'
+	type='text/css' media='all' />
+<link rel='stylesheet' id='flatsome-googlefonts-css'
+	href='http://fonts.googleapis.com/css?family=Montserrat%3Aregular%2Cdefault%2Cdefault%2C400%7CDancing+Script%3Aregular%2C400&amp;display=swap&amp;ver=3.9'
+	type='text/css' media='all' />
+<link rel="https://api.w.org/" href="wp-json/index.html" />
+<link rel="alternate" type="application/json"
+	href="../../wp-json/wp/v2/pages/61.json" />
+<link rel="EditURI" type="application/rsd+xml" title="RSD"
+	href="xmlrpc0db0.html?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml"
+	href="../../wp-includes/wlwmanifest.xml" />
+<link rel='shortlink' href='index.html' />
+<link rel="alternate" type="application/json+oembed"
+	href="../../wp-json/oembed/1.0/embedc187.json?url=https%3A%2F%2Fmarshallsaigon.com%2F" />
+<link rel="alternate" type="text/xml+oembed"
+	href="../../wp-json/oembed/1.0/embed3b9e?url=https%3A%2F%2Fmarshallsaigon.com%2F&amp;format=xml" />
+<link rel="icon"
+	href="../../wp-content/uploads/2020/08/cropped-Logo-Marshall-1-2-32x32.png"
+	sizes="32x32" />
+<link rel="icon"
+	href="../../wp-content/uploads/2020/08/cropped-Logo-Marshall-1-2-192x192.png"
+	sizes="192x192" />
+<link rel="apple-touch-icon"
+	href="../../wp-content/uploads/2020/08/cropped-Logo-Marshall-1-2-180x180.png" />
+</head>
+
+<body>
+	<th:block th:include="/header"></th:block>
+
+	<main id="main" class="">
+		<div class="checkout-page-title page-title">
+			<div class="page-title-inner flex-row medium-flex-wrap container">
+				<div class="flex-col flex-grow medium-text-center">
+					<nav
+						class="breadcrumbs flex-row flex-row-center heading-font checkout-breadcrumbs text-center strong h2 uppercase">
+						<a th:href="@{/cart/shoppingCart}" class="current">Shopping
+							Cart</a> <span class="divider hide-for-small"><i
+							class="icon-angle-right"></i></span> <a th:href="@{/order/checkout}"
+							class="no-click hide-for-small">Checkout details</a> <span
+							class="divider hide-for-small"><i class="icon-angle-right"></i></span>
+						<a href="#" class="no-click hide-for-small">Order Complete</a>
+					</nav>
+				</div>
+			</div>
+		</div>
+		<div class="cart-container container page-wrapper page-checkout">
+			<div class="woocommerce">
+				<div class="text-center pt pb">
+					<div class="woocommerce-notices-wrapper"></div>
+					<h2>Đơn hàng</h2>
+		
+						<h2>Đơn hàng chi tiết</h2>
+						<main id="main" class="">
+							<div id="content" class="content-area page-wrapper" role="main">
+								<div class="row row-main">
+									<div class="large-12 col">
+										<div class="col-inner">
+
+											<div class="woocommerce">
+												<div class="woocommerce-notices-wrapper"></div>
+
+												<div class="woocommerce-notices-wrapper"></div>
+												
+
+													<div class="row pt-0 ">
+														<div class="large-7 col  ">
+															<div id="customer_details">
+																<div class="clear">
+																<form method="post" th:object="${order}"
+													>
+																	<div class="woocommerce-billing-fields">
+
+																		<h3>Thông tin đơn hàng</h3>
+																		<div class="woocommerce-billing-fields__field-wrapper">
+																			<p
+																				class="form-row form-row-first thwcfd-field-wrapper thwcfd-field-text validate-required"
+																				id="billing_first_name_field" data-priority="10">
+																				<label for="billing_first_name" class="">Mã đơn hàng
+																					&nbsp;<abbr class="required"
+																					title="bắt buộc">*</abbr>
+																				</label><span class="woocommerce-input-wrapper"><input
+																					type="text" class="input-text " readonly="readonly"
+																					th:field="*{orderId}" placeholder=""
+																					value="" autocomplete="given-name"></span>
+																			</p>
+																			<p
+																				class="form-row form-row-first thwcfd-field-wrapper thwcfd-field-text validate-required"
+																				id="billing_first_name_field" data-priority="10">
+																				<label for="billing_first_name" class="">Tên
+																					Khách Hàng&nbsp;<abbr class="required"
+																					title="bắt buộc">*</abbr>
+																				</label><span class="woocommerce-input-wrapper"><input
+																					type="text" class="input-text " readonly="readonly"
+																					th:field="*{account.fullName}" placeholder=""
+																					value="" autocomplete="given-name"></span>
+																			</p>
+																			<p
+																				class="form-row address-field thwcfd-field-wrapper thwcfd-field-text validate-required form-row-first"
+																				id="billing_address_1_field" data-priority="30">
+																				<label for="billing_address_1" class="">Địa
+																					chỉ&nbsp;<abbr class="required" title="bắt buộc">*</abbr>
+																				</label><span class="woocommerce-input-wrapper"><input
+																					type="text" class="input-text " readonly="readonly"
+																					th:field="*{customerAddress}"
+																					placeholder="Số nhà, Tên Đường, Phường, Quận,..."
+																					value="" autocomplete="address-line1"></span>
+																			</p>
+																			<p
+																				class="form-row form-row-wide thwcfd-field-wrapper thwcfd-field-email validate-required validate-email"
+																				id="billing_email_field" data-priority="60">
+																				<label for="billing_email" class="">Địa chỉ
+																					email&nbsp;<abbr class="required" title="bắt buộc">*</abbr>
+																				</label><span class="woocommerce-input-wrapper"><input
+																					type="email" class="input-text " readonly="readonly"
+																					th:field="*{account.email}" placeholder="" value=""
+																					autocomplete="email username"></span>
+																			</p>
+																			<p
+																				class="form-row form-row-wide thwcfd-field-wrapper thwcfd-field-email validate-required validate-email"
+																				id="billing_email_field" data-priority="60">
+																				<label for="billing_email" class="">Ngày đặt hàng
+																					&nbsp;<abbr class="required" title="bắt buộc">*</abbr>
+																				</label><span class="woocommerce-input-wrapper"><input
+																					type="date" class="input-text " readonly="readonly"
+																					th:field="*{orderDate}" placeholder="" value=""
+																					autocomplete=""></span>
+																			</p>
+																			<p
+																				class="form-row notes thwcfd-field-wrapper thwcfd-field-textarea"
+																				id="order_comments_field" data-priority="">
+																				<label for="order_comments" class="">Ghi chú
+																					đơn hàng&nbsp;<span class="optional">(tuỳ
+																						chọn)</span>
+																				</label><span class="woocommerce-input-wrapper"><textarea
+																						name="order_comments" class="input-text "
+																						id="order_comments"	readonly="readonly"
+																						placeholder="Ghi chú về đơn hàng, ví dụ:số điện thoại, thời gian hay chỉ dẫn địa điểm giao hàng chi tiết hơn."
+																						rows="2" cols="5" th:field="*{descriptions}"></textarea></span>
+																			</p>
+																			<p
+																				class="form-row notes thwcfd-field-wrapper thwcfd-field-textarea"
+																				id="order_comments_field" data-priority="">
+																				<input type="hidden" th:field="*{account.userName}" />
+																			</p>
+																			<p
+																				class="form-row notes thwcfd-field-wrapper thwcfd-field-textarea"
+																				id="order_comments_field" data-priority="">
+																				<input type="hidden" th:field="*{account.password}" />
+																			</p>
+																			<p
+																				class="form-row notes thwcfd-field-wrapper thwcfd-field-textarea"
+																				id="order_comments_field" data-priority="">
+																				<input type="hidden" th:field="*{account.userRole}" />
+																			</p>
+																			<p
+																				class="form-row notes thwcfd-field-wrapper thwcfd-field-textarea"
+																				id="order_comments_field" data-priority="">
+																				<input type="hidden" th:field="*{account.active}" />
+																			</p>
+																			<p
+																				class="form-row notes thwcfd-field-wrapper thwcfd-field-textarea"
+																				id="order_comments_field" data-priority="">
+																				<input type="hidden" th:field="*{amount}" />
+																			</p>
+                  															
+																			
+																		</div>
+																	</div>
+																	
+																	</form>
+																	
+																	
+																</div>
+															</div>
+														</div>
+														<div class="large-5 col">
+															<div class="col-inner has-border">
+																<div class="checkout-sidebar sm-touch-scroll">
+
+																	<h3 id="order_review_heading">Đơn hàng chi tiết</h3>
+																	
+																	<div id="order_review"
+																		class="woocommerce-checkout-review-order">
+																		<table
+																			class="shop_table woocommerce-checkout-review-order-table">
+																			<thead>
+																				<tr>
+																					<th class="product-name">Mã đơn hàng</th>
+																					<th class="product-name">Sản phẩm</th>
+																					<th class="product-quantity">SL</th>
+																					<th class="product-total">Giá</th>
+																					<th class="product-total">Khuyến mãi</th>
+																				</tr>
+																			</thead>
+																			<tbody>
+																				<tr th:each="d: ${details}" class="cart_item">
+																					<td class="product-name" th:text="${d.order.orderId}"></td>
+																					<td class="product-name" th:text="${d.product.proName}"></td>
+																					<td class="product-quantity" th:text="${d.quantity}"></td>
+																					<td class="product-total"><span
+																						class="woocommerce-Price-amount amount"><bdi
+																								th:text="${#numbers.formatDecimal(d.price ,0,'COMMA',0,'POINT')}"></bdi></span>
+																					</td>
+																					<td class="product-quantity" th:text="${d.discount}"></td>
+																				</tr>
+																			</tbody>
+																			<tfoot>
+																				
+																				<tr class="woocommerce-shipping-totals shipping ">
+																					<td class="shipping__inner" colspan="2">
+																						<table class="shipping__table ">
+																							<tbody>
+																								<tr>
+																									<th>Giao hàng</th>
+																									<td data-title="Giao hàng">
+																										<ul id="shipping_method"
+																											class="shipping__list woocommerce-shipping-methods">
+																											<li class="shipping__list_item"><input
+																												type="hidden" name="shipping_method[0]"
+																												data-index="0"
+																												id="shipping_method_0_free_shipping1"
+																												value="free_shipping:1"
+																												class="shipping_method"><label
+																												class="shipping__list_label"
+																												for="shipping_method_0_free_shipping1">Giao
+																													hàng miễn phí</label></li>
+																										</ul>
+																									</td>
+																								</tr>
+																							</tbody>
+																						</table>
+																					</td>
+																				</tr>
+
+																				<tr class="order-total">
+																					<th>Tổng</th>
+																					<td><strong><span
+																							class="woocommerce-Price-amount amount"><bdi
+																									th:text="${#numbers.formatDecimal(amount,0,'COMMA',0,'POINT')}"></bdi></span></strong><b>đ</b>
+																					</td>
+																				</tr>
+																			</tfoot>
+																		</table>
+																		
+																	</div>
+																	
+																</div>
+															</div>
+														</div>
+													</div>
+												
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</main>
+				</div>
+
+			</div>
+		</div>
+	</main>
+
+	<th:block th:include="/footer"></th:block>
+
+</body>
+
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<title>Giỏ hàng</title>
+<link rel="stylesheet" type="text/css" href="/styles.css">
+
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel='stylesheet' id='mbwph-style-css'
+	href='../wp-content/plugins/wp-helper-lite/public/partials/assets/css/mbwph-style24b2.css?ver=5.5.5'
+	type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-css'
+	href='../wp-includes/css/dist/block-library/style.min24b2.css?ver=5.5.5'
+	type='text/css' media='all' />
+<link rel='stylesheet' id='wc-block-vendors-style-css'
+	href='../wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/vendors-stylee100.css?ver=4.7.2'
+	type='text/css' media='all' />
+<link rel='stylesheet' id='wc-block-style-css'
+	href='../wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/stylee100.css?ver=4.7.2'
+	type='text/css' media='all' />
+<link rel='stylesheet' id='flatsome-icons-css'
+	href='../wp-content/themes/flatsome/assets/css/fl-iconsae34.css?ver=3.12'
+	type='text/css' media='all' />
+<link rel='stylesheet' id='flatsome-main-css'
+	href='../wp-content/themes/flatsome/assets/css/flatsome2916.css?ver=3.13.1'
+	type='text/css' media='all' />
+<link rel='stylesheet' id='flatsome-shop-css'
+	href='../wp-content/themes/flatsome/assets/css/flatsome-shop2916.css?ver=3.13.1'
+	type='text/css' media='all' />
+<link rel='stylesheet' id='flatsome-style-css'
+	href='../wp-content/themes/flatsome-child/style6aec.css?ver=3.0'
+	type='text/css' media='all' />
+<link rel='stylesheet' id='dashicons-css'
+	href='../wp-includes/css/dashicons.min24b2.css?ver=5.5.5'
+	type='text/css' media='all' />
+<link rel='stylesheet' id='flatsome-googlefonts-css'
+	href='http://fonts.googleapis.com/css?family=Montserrat%3Aregular%2Cdefault%2Cdefault%2C400%7CDancing+Script%3Aregular%2C400&amp;display=swap&amp;ver=3.9'
+	type='text/css' media='all' />
+<link rel="https://api.w.org/" href="wp-json/index.html" />
+<link rel="alternate" type="application/json"
+	href="../wp-json/wp/v2/pages/61.json" />
+<link rel="EditURI" type="application/rsd+xml" title="RSD"
+	href="xmlrpc0db0.html?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml"
+	href="../wp-includes/wlwmanifest.xml" />
+<link rel='shortlink' href='index.html' />
+<link rel="alternate" type="application/json+oembed"
+	href="../wp-json/oembed/1.0/embedc187.json?url=https%3A%2F%2Fmarshallsaigon.com%2F" />
+<link rel="alternate" type="text/xml+oembed"
+	href="../wp-json/oembed/1.0/embed3b9e?url=https%3A%2F%2Fmarshallsaigon.com%2F&amp;format=xml" />
+<link rel="icon"
+	href="../wp-content/uploads/2020/08/cropped-Logo-Marshall-1-2-32x32.png"
+	sizes="32x32" />
+<link rel="icon"
+	href="../static/wp-content/uploads/2020/08/cropped-Logo-Marshall-1-2-192x192.png"
+	sizes="192x192" />
+<link rel="apple-touch-icon"
+	href="../wp-content/uploads/2020/08/cropped-Logo-Marshall-1-2-180x180.png" />
+</head>
+
+<body>
+	<th:block th:include="/header"></th:block>
+
+	<main id="main" class="">
+		<div class="checkout-page-title page-title">
+			<div class="page-title-inner flex-row medium-flex-wrap container">
+				<div class="flex-col flex-grow medium-text-center">
+					<nav
+						class="breadcrumbs flex-row flex-row-center heading-font checkout-breadcrumbs text-center strong h2 uppercase">
+						<a th:href="@{/cart/shoppingCart}">Shopping Cart</a> <span
+							class="divider hide-for-small"><i class="icon-angle-right"></i></span>
+						<a th:href="@{/order/checkout}" class="hide-for-small">Checkout
+							details</a> <span class="divider hide-for-small"><i
+							class="icon-angle-right"></i></span> <a href="#"
+							class=" hide-for-small current">Order Complete</a>
+					</nav>
+				</div>
+			</div>
+		</div>
+		<div class="my-account-header page-title normal-title">
+			<div class="page-title-inner flex-row container text-left">
+
+				<div class="flex-col flex-grow text-center">
+					<div class="text-center social-login">
+						<p>
+							Danh sách đơn hàng của <a sec:authentication="principal.username"></a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="cart-container container page-wrapper page-checkout">
+			<div class="woocommerce">
+				<div class="text-center pt pb">
+					<div class="woocommerce-notices-wrapper"></div>
+
+					<th:block th:if="${orderList.size == 0}">
+						<h2>Chưa có đơn hàng!!!</h2>
+					</th:block>
+
+					<th:block th:if="${orderList.size != 0}">
+						<table class="table">
+							<tr>
+								<th>Mã đơn hàng</th>
+								<th>Ngày đặt hàng</th>
+								<th>Giá</th>
+								<th>Địa chỉ giao hàng</th>
+								<th>Ghi chú</th>
+							</tr>
+							<tr th:each="order: ${orderList}">
+								<td th:text="${order.orderId}"></td>
+								<td th:text="${order.orderDate}"></td>
+								<td
+									th:text="${#numbers.formatDecimal(order.amount,0,'COMMA',0,'POINT')}"></td>
+								<td th:text="${order.customerAddress}"></td>
+								<td th:text="${order.descriptions}"></td>
+								<td><a
+									th:href="@{|/order/listOrderDetail/${order.orderId}|}">Chi
+										tiết</a></td>
+							</tr>
+						</table>
+					</th:block>
+				</div>
+
+			</div>
+		</div>
+	</main>
+
+	<th:block th:include="/footer"></th:block>
+
+</body>
+
+</html>

@@ -1,0 +1,105 @@
+<html xmlns:th="http://www.thymeLeaf.org">
+
+<th:block th:include="/admin/management"></th:block>
+
+<div class="content-wrapper">
+	<!-- Content Header (Page header) -->
+	<section class="content-header">
+		<div class="container-fluid">
+			<div class="row mb-2">
+				<div class="col-sm-6">
+					<h1>Trang quản trị</h1>
+				</div>
+			</div>
+		</div>
+		<!-- /.container-fluid -->
+	</section>
+
+	<!-- Main content -->
+	<section class="content">
+
+		<!-- Default box -->
+		<div class="row">
+
+			<!----------------------------------- ./col ---------------------------------------->
+			<div class="col-lg-3 col-6">
+				<!-- small card -->
+				<div class="small-box bg-info">
+					<div class="inner">
+						<h3 th:text="${countOrder}"></h3>
+
+						<p>Đơn hàng</p>
+					</div>
+					<div class="icon">
+						<i class="fas fa-shopping-cart"></i>
+					</div>
+					<a th:href="@{/admin/listOrder}" class="small-box-footer"> Xem
+						nhanh <i class="fas fa-arrow-circle-right"></i>
+					</a>
+				</div>
+			</div>
+			<!-- ./col -->
+
+			<!----------------------------------- ./col ---------------------------------------->
+			<div class="col-lg-3 col-6">
+				<!-- small card -->
+				<div class="small-box bg-warning">
+					<div class="inner">
+						<h3 th:text="${countAcc}"></h3>
+
+						<p>Tài khoản</p>
+					</div>
+					<div class="icon">
+						<i class="fas fa-user-plus"></i>
+					</div>
+					<a th:href="@{/admin/listAccount}" class="small-box-footer">
+						Xem nhanh <i class="fas fa-arrow-circle-right"></i>
+					</a>
+				</div>
+			</div>
+			<!-- ./col -->
+
+			<!----------------------------------- ./col ---------------------------------------->
+			<div class="col-lg-3 col-6">
+				<!-- small card -->
+				<div class="small-box bg-success">
+					<div class="inner">
+						<h3 th:text="${countPro}"></h3>
+
+						<p>Sản phẩm</p>
+					</div>
+					<div class="icon">
+						<i class="fa fa-battery-quarter" aria-hidden="true"></i>
+					</div>
+					<a th:href="@{/admin/listPro}" class="small-box-footer"> Xem nhanh <i
+						class="fas fa-arrow-circle-right"></i>
+					</a>
+				</div>
+			</div>
+			<!-- ./col -->
+
+			<!----------------------------------- ./col ---------------------------------------->
+			<div class="col-lg-3 col-6">
+				<!-- small card -->
+				<div class="small-box bg-danger">
+					<div class="inner">
+						<h3 >0</h3>
+
+						<p>Tin tức</p>
+					</div>
+					<div class="icon">
+						<i class="fas fa-chart-pie"></i>
+					</div>
+					<a href="#" class="small-box-footer"> Xem nhanh <i
+						class="fas fa-arrow-circle-right"></i>
+					</a>
+				</div>
+			</div>
+			<!-- ./col -->
+		</div>
+		<!-- /.card -->
+
+	</section>
+	<!-- /.content -->
+</div>
+</html>

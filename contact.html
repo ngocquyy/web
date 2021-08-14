@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Marshall</title>
+</head>
+<body>
+	<th:block th:include="header"></th:block>
+
+	<main id="main" class="">
+		<div id="content" role="main" class="content-area">
+			<section class="section" id="section_848543045">
+				<div class="bg section-bg fill bg-fill   bg-loaded">
+					<div class="section-bg-overlay absolute fill"></div>
+				</div>
+				<div class="section-content relative">
+					<div class="row" id="row-1559852858">
+						<div id="col-2114001127" class="col small-12 large-12">
+							<div class="col-inner">
+								<div id="gap-235097699" class="gap-element clearfix"
+									style="display: block; height: auto;"></div>
+								<div class="row row-collapse row-full-width" id="row-147637805">
+									<div id="col-598110478" class="col medium-6 small-12 large-6">
+										<div class="col-inner"></div>
+									</div>
+									<div id="col-318715613" class="col medium-6 small-12 large-6">
+										<div class="col-inner">
+											<div class="google-map relative mb" id="map-1321650762">
+												<div class="map-height" id="map-1321650762-inner"></div>
+												<div id="map_overlay_top"></div>
+												<div id="map_overlay_bottom"></div>
+												<div th:each="c: ${listContact}"
+													class="map_inner map-inner last-reset absolute x100 md-x95 lg-x95 y100 md-y95 lg-y95">
+													<h2 th:text="${c.shopName}"></h2>
+													<h3>Địa chỉ: <span th:text="${c.addresss}"></span></h3>
+													<h3>Hotline: <span th:text="${c.hotline}"></span></h3>
+													<h3>Email: <span th:text="${c.email}"></span></h3>
+													
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+	</main>
+
+	<th:block th:include="footer"></th:block>
+</body>
+</html>
